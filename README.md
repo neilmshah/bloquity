@@ -1,9 +1,7 @@
 
-# Project Team-20
+# BlockChain for RealEsate title records
 ### **Team Members:** Neil Shah, Archana Yadawa, Nishtha Atrey, Kruti Thukral
 
-
-## BlockChain for RealEsate title records  - APPROVED
 
 ### Problem statement: 
 
