@@ -78,6 +78,9 @@ module.exports = mongoose.model(
     parkingSpots: {
       type: String
     },
+    price: {
+      type: String
+    },
     sqft: {
       type: String
     }
