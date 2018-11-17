@@ -11,21 +11,28 @@ function handle_request(msg, callback) {
   );
 
   //search results logic
-  var date1 = new Date(msg.startdate);
-  var date2 = new Date(msg.enddate);
-  const timeDiff = Math.abs(date2.getDate() - date1.getDate());
-  var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  // var date1 = new Date(msg.startdate);
+  // var date2 = new Date(msg.enddate);
+  // const timeDiff = Math.abs(date2.getDate() - date1.getDate());
+  // var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
   Properties.find({
-    enddate: { $gte: new Date(msg.enddate) },
-    accomodates: { $gte: parseInt(msg.guests) },
-    startdate: { $lte: new Date(msg.startdate) },
+    // enddate: { $gte: new Date(msg.enddate) },
+    // accomodates: { $gte: parseInt(msg.guests) },
+    // startdate: { $lte: new Date(msg.startdate) },
 
-    minstay: { $lte: diffDays },
+    // minstay: { $lte: diffDays },
+    // $or: [
+    //   { country: String(msg.where).toLowerCase() },
+    //   { city: String(msg.where).toLowerCase() },
+    //   { state: String(msg.where).toLowerCase() }
+    // ]
+
     $or: [
-      { country: String(msg.where).toLowerCase() },
-      { city: String(msg.where).toLowerCase() },
-      { state: String(msg.where).toLowerCase() }
+      //{ country: String(msg.country).toLowerCase()},
+      { zip: String(msg.zip) },
+      { city: String(msg.city).toLowerCase() },
+      { state: String(msg.state).toLowerCase()}
     ]
   }).then(
     docs => {
