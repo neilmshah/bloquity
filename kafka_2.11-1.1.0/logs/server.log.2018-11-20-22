@@ -1,0 +1,2 @@
+[2018-11-20 22:54:21,768] INFO Processed session termination for sessionid: 0x16733da91200020 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-20 22:54:21,791] INFO Closed socket connection for client /127.0.0.1:62995 which had sessionid 0x16733da91200020 (org.apache.zookeeper.server.NIOServerCnxn)

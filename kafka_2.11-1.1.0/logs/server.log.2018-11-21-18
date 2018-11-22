@@ -1,0 +1,6 @@
+[2018-11-21 19:00:46,842] INFO Accepted socket connection from /127.0.0.1:49719 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-21 19:00:46,862] WARN Connection request from old client /127.0.0.1:49719; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-21 19:00:46,862] INFO Client attempting to establish new session at /127.0.0.1:49719 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-21 19:00:46,868] INFO Established session 0x167395607e00020 with negotiated timeout 30000 for client /127.0.0.1:49719 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-21 19:00:46,943] INFO Got user-level KeeperException when processing sessionid:0x167395607e00000 type:setData cxid:0xa3 zxid:0x159 txntype:-1 reqpath:n/a Error Path:/consumers/kafka-node-group/offset/post_login/0 Error:KeeperErrorCode = NoNode for /consumers/kafka-node-group/offset/post_login/0 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-21 19:00:46,947] INFO Got user-level KeeperException when processing sessionid:0x167395607e00000 type:create cxid:0xa4 zxid:0x15a txntype:-1 reqpath:n/a Error Path:/consumers/kafka-node-group/offset/post_login Error:KeeperErrorCode = NoNode for /consumers/kafka-node-group/offset/post_login (org.apache.zookeeper.server.PrepRequestProcessor)
