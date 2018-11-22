@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bookproperty } from "../../actions";
 import { sendmessage } from "../../actions";
-
+//today
 const today = new Date().toISOString().slice(0, 10);
 const token = localStorage.getItem("token");
 //Define a Login Component
@@ -18,7 +18,7 @@ class Property extends Component {
     const {
       where,
       //startdate,
-     //enddate,
+      //enddate,
       guests,
       propnum_pk,
       email,
