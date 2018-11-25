@@ -1,102 +1,1236 @@
-[2018-11-21 20:08:34,068] INFO Got user-level KeeperException when processing sessionid:0x167398613d20000 type:setData cxid:0x22d zxid:0x6ee txntype:-1 reqpath:n/a Error Path:/consumers/kafka-node-group/offset/post_lyp/0 Error:KeeperErrorCode = NoNode for /consumers/kafka-node-group/offset/post_lyp/0 (org.apache.zookeeper.server.PrepRequestProcessor)
-[2018-11-21 20:08:34,096] INFO Got user-level KeeperException when processing sessionid:0x167398613d20000 type:create cxid:0x22e zxid:0x6ef txntype:-1 reqpath:n/a Error Path:/consumers/kafka-node-group/offset/post_lyp Error:KeeperErrorCode = NoNode for /consumers/kafka-node-group/offset/post_lyp (org.apache.zookeeper.server.PrepRequestProcessor)
-[2018-11-21 20:13:56,907] INFO Got user-level KeeperException when processing sessionid:0x167398613d20000 type:setData cxid:0x330 zxid:0x7f1 txntype:-1 reqpath:n/a Error Path:/consumers/kafka-node-group/offset/get_searchresults/0 Error:KeeperErrorCode = NoNode for /consumers/kafka-node-group/offset/get_searchresults/0 (org.apache.zookeeper.server.PrepRequestProcessor)
-[2018-11-21 20:13:56,935] INFO Got user-level KeeperException when processing sessionid:0x167398613d20000 type:create cxid:0x331 zxid:0x7f2 txntype:-1 reqpath:n/a Error Path:/consumers/kafka-node-group/offset/get_searchresults Error:KeeperErrorCode = NoNode for /consumers/kafka-node-group/offset/get_searchresults (org.apache.zookeeper.server.PrepRequestProcessor)
-[2018-11-21 20:53:50,345] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20015, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,421] INFO Closed socket connection for client /127.0.0.1:52324 which had sessionid 0x167398613d20015 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,422] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d2001f, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,424] INFO Closed socket connection for client /127.0.0.1:52334 which had sessionid 0x167398613d2001f (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,424] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d2001d, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,428] INFO Closed socket connection for client /127.0.0.1:52332 which had sessionid 0x167398613d2001d (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,428] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20016, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,433] INFO Closed socket connection for client /127.0.0.1:52325 which had sessionid 0x167398613d20016 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,433] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d2001e, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,434] INFO Closed socket connection for client /127.0.0.1:52333 which had sessionid 0x167398613d2001e (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,435] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d2001c, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,436] INFO Closed socket connection for client /127.0.0.1:52331 which had sessionid 0x167398613d2001c (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,436] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d2001a, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,437] INFO Closed socket connection for client /127.0.0.1:52329 which had sessionid 0x167398613d2001a (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,437] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20013, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,438] INFO Closed socket connection for client /127.0.0.1:52322 which had sessionid 0x167398613d20013 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,438] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20012, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,439] INFO Closed socket connection for client /127.0.0.1:52321 which had sessionid 0x167398613d20012 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,440] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20017, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,442] INFO Closed socket connection for client /127.0.0.1:52326 which had sessionid 0x167398613d20017 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,442] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d2001b, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,444] INFO Closed socket connection for client /127.0.0.1:52330 which had sessionid 0x167398613d2001b (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,444] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20019, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,447] INFO Closed socket connection for client /127.0.0.1:52327 which had sessionid 0x167398613d20019 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,447] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20018, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,450] INFO Closed socket connection for client /127.0.0.1:52328 which had sessionid 0x167398613d20018 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:50,451] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20014, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:50,452] INFO Closed socket connection for client /127.0.0.1:52323 which had sessionid 0x167398613d20014 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:53,364] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20011, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:53,374] INFO Closed socket connection for client /127.0.0.1:52315 which had sessionid 0x167398613d20011 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:53:53,374] WARN caught end of stream exception (org.apache.zookeeper.server.NIOServerCnxn)
-EndOfStreamException: Unable to read additional data from client sessionid 0x167398613d20020, likely client has closed socket
-	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:239)
-	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:203)
-	at java.lang.Thread.run(Thread.java:748)
-[2018-11-21 20:53:53,375] INFO Closed socket connection for client /127.0.0.1:52389 which had sessionid 0x167398613d20020 (org.apache.zookeeper.server.NIOServerCnxn)
-[2018-11-21 20:54:01,016] INFO Processed session termination for sessionid: 0x167398613d20000 (org.apache.zookeeper.server.PrepRequestProcessor)
-[2018-11-21 20:54:01,035] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:52258 which had sessionid 0x167398613d20000 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:27:15,610] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+[2018-11-25 14:27:15,626] INFO autopurge.snapRetainCount set to 3 (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-11-25 14:27:15,626] INFO autopurge.purgeInterval set to 0 (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-11-25 14:27:15,626] INFO Purge task is not scheduled. (org.apache.zookeeper.server.DatadirCleanupManager)
+[2018-11-25 14:27:15,626] WARN Either no config or no quorum defined in config, running  in standalone mode (org.apache.zookeeper.server.quorum.QuorumPeerMain)
+[2018-11-25 14:27:15,691] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+[2018-11-25 14:27:15,691] INFO Starting server (org.apache.zookeeper.server.ZooKeeperServerMain)
+[2018-11-25 14:27:15,741] INFO Server environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,741] INFO Server environment:host.name=10.250.11.123 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,741] INFO Server environment:java.version=1.8.0_192 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,742] INFO Server environment:java.vendor=Oracle Corporation (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,742] INFO Server environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,742] INFO Server environment:java.class.path=/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/argparse4j-0.7.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/commons-lang3-3.5.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-api-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-file-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-json-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-runtime-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-transforms-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/guava-20.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-annotations-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-core-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-databind-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-base-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-json-provider-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-module-jaxb-annotations-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.inject-1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-client-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-common-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-server-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-client-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-continuation-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-http-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-io-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-security-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-server-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-servlet-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-servlets-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-util-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-clients-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-log4j-appender-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-streams-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-streams-examples-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-streams-test-utils-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-tools-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-sources.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-test-sources.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/log4j-1.2.17.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/lz4-java-1.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/maven-artifact-3.5.2.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/metrics-core-2.2.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/plexus-utils-3.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/reflections-0.9.11.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/scala-library-2.11.12.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/scala-logging_2.11-3.7.2.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/scala-reflect-2.11.12.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/snappy-java-1.1.7.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/zkclient-0.10.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,748] INFO Server environment:java.library.path=/Users/archana/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,748] INFO Server environment:java.io.tmpdir=/var/folders/hn/svsbt4jj2kj7pqgggf0hxrtr0000gn/T/ (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,749] INFO Server environment:java.compiler=<NA> (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,749] INFO Server environment:os.name=Mac OS X (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,749] INFO Server environment:os.arch=x86_64 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,749] INFO Server environment:os.version=10.13.6 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,749] INFO Server environment:user.name=archana (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,749] INFO Server environment:user.home=/Users/archana (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,749] INFO Server environment:user.dir=/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,781] INFO tickTime set to 3000 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,782] INFO minSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,782] INFO maxSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:15,867] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:27:46,072] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)
+[2018-11-25 14:27:47,838] INFO starting (kafka.server.KafkaServer)
+[2018-11-25 14:27:47,846] INFO Connecting to zookeeper on localhost:2181 (kafka.server.KafkaServer)
+[2018-11-25 14:27:47,908] INFO [ZooKeeperClient] Initializing a new session to localhost:2181. (kafka.zookeeper.ZooKeeperClient)
+[2018-11-25 14:27:47,925] INFO Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,925] INFO Client environment:host.name=10.250.11.123 (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,925] INFO Client environment:java.version=1.8.0_192 (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,925] INFO Client environment:java.vendor=Oracle Corporation (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,925] INFO Client environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,926] INFO Client environment:java.class.path=/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/aopalliance-repackaged-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/argparse4j-0.7.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/commons-lang3-3.5.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-api-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-file-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-json-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-runtime-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/connect-transforms-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/guava-20.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/hk2-api-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/hk2-locator-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/hk2-utils-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-annotations-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-core-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-databind-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-base-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-jaxrs-json-provider-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jackson-module-jaxb-annotations-2.9.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javassist-3.20.0-GA.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javassist-3.21.0-GA.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.annotation-api-1.2.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.inject-1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.inject-2.5.0-b32.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.servlet-api-3.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/javax.ws.rs-api-2.0.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-client-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-common-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-container-servlet-core-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-guava-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-media-jaxb-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jersey-server-2.25.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-client-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-continuation-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-http-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-io-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-security-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-server-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-servlet-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-servlets-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jetty-util-9.2.24.v20180105.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/jopt-simple-5.0.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-clients-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-log4j-appender-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-streams-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-streams-examples-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-streams-test-utils-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka-tools-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-sources.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0-test-sources.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/kafka_2.11-1.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/log4j-1.2.17.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/lz4-java-1.4.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/maven-artifact-3.5.2.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/metrics-core-2.2.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/osgi-resource-locator-1.0.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/plexus-utils-3.1.0.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/reflections-0.9.11.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/rocksdbjni-5.7.3.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/scala-library-2.11.12.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/scala-logging_2.11-3.7.2.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/scala-reflect-2.11.12.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/slf4j-api-1.7.25.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/slf4j-log4j12-1.7.25.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/snappy-java-1.1.7.1.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/validation-api-1.1.0.Final.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/zkclient-0.10.jar:/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0/bin/../libs/zookeeper-3.4.10.jar (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,927] INFO Client environment:java.library.path=/Users/archana/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,927] INFO Client environment:java.io.tmpdir=/var/folders/hn/svsbt4jj2kj7pqgggf0hxrtr0000gn/T/ (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,927] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,927] INFO Client environment:os.name=Mac OS X (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,927] INFO Client environment:os.arch=x86_64 (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,928] INFO Client environment:os.version=10.13.6 (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,928] INFO Client environment:user.name=archana (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,928] INFO Client environment:user.home=/Users/archana (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,928] INFO Client environment:user.dir=/Users/archana/Desktop/BloquityCombine/kafka_2.11-1.1.0 (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,930] INFO Initiating client connection, connectString=localhost:2181 sessionTimeout=6000 watcher=kafka.zookeeper.ZooKeeperClient$ZooKeeperClientWatcher$@222545dc (org.apache.zookeeper.ZooKeeper)
+[2018-11-25 14:27:47,974] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:27:47,976] INFO [ZooKeeperClient] Waiting until connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-11-25 14:27:48,003] INFO Expiring session 0x167398613d2001f, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,004] INFO Expiring session 0x167398613d20014, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,004] INFO Expiring session 0x167398613d20020, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,004] INFO Expiring session 0x167398613d20019, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,005] INFO Expiring session 0x167398613d2001c, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,005] INFO Expiring session 0x167398613d2001b, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,005] INFO Expiring session 0x167398613d20017, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,005] INFO Expiring session 0x167398613d2001d, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,005] INFO Expiring session 0x167398613d2001a, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,006] INFO Expiring session 0x167398613d20013, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,006] INFO Expiring session 0x167398613d20011, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,006] INFO Expiring session 0x167398613d20012, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,006] INFO Expiring session 0x167398613d20016, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,006] INFO Expiring session 0x167398613d20015, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,006] INFO Expiring session 0x167398613d2001e, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,006] INFO Expiring session 0x167398613d20018, timeout of 30000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,007] INFO Processed session termination for sessionid: 0x167398613d2001f (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,007] INFO Processed session termination for sessionid: 0x167398613d20014 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,007] INFO Processed session termination for sessionid: 0x167398613d20020 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,007] INFO Processed session termination for sessionid: 0x167398613d20019 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,007] INFO Processed session termination for sessionid: 0x167398613d2001c (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,007] INFO Processed session termination for sessionid: 0x167398613d2001b (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,008] INFO Creating new log file: log.1135 (org.apache.zookeeper.server.persistence.FileTxnLog)
+[2018-11-25 14:27:48,008] INFO Processed session termination for sessionid: 0x167398613d20017 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,010] INFO Processed session termination for sessionid: 0x167398613d2001d (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,010] INFO Processed session termination for sessionid: 0x167398613d2001a (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,010] INFO Processed session termination for sessionid: 0x167398613d20013 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,010] INFO Processed session termination for sessionid: 0x167398613d20011 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,011] INFO Processed session termination for sessionid: 0x167398613d20012 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,017] INFO Socket connection established to localhost/127.0.0.1:2181, initiating session (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:27:48,016] INFO Processed session termination for sessionid: 0x167398613d20016 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,018] INFO Processed session termination for sessionid: 0x167398613d20015 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,018] INFO Processed session termination for sessionid: 0x167398613d2001e (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,019] INFO Processed session termination for sessionid: 0x167398613d20018 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,020] INFO Accepted socket connection from /127.0.0.1:62064 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:27:48,049] INFO Client attempting to establish new session at /127.0.0.1:62064 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,061] INFO Established session 0x1674cfbe63d0000 with negotiated timeout 6000 for client /127.0.0.1:62064 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:27:48,064] INFO Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x1674cfbe63d0000, negotiated timeout = 6000 (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:27:48,075] INFO [ZooKeeperClient] Connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-11-25 14:27:48,242] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x1 zxid:0x1146 txntype:-1 reqpath:n/a Error Path:/consumers Error:KeeperErrorCode = NodeExists for /consumers (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,296] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x2 zxid:0x1147 txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,301] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x3 zxid:0x1148 txntype:-1 reqpath:n/a Error Path:/brokers/topics Error:KeeperErrorCode = NodeExists for /brokers/topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,308] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x4 zxid:0x1149 txntype:-1 reqpath:n/a Error Path:/config/changes Error:KeeperErrorCode = NodeExists for /config/changes (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,312] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x5 zxid:0x114a txntype:-1 reqpath:n/a Error Path:/admin/delete_topics Error:KeeperErrorCode = NodeExists for /admin/delete_topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,317] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x6 zxid:0x114b txntype:-1 reqpath:n/a Error Path:/brokers/seqid Error:KeeperErrorCode = NodeExists for /brokers/seqid (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,322] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x7 zxid:0x114c txntype:-1 reqpath:n/a Error Path:/isr_change_notification Error:KeeperErrorCode = NodeExists for /isr_change_notification (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,329] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x8 zxid:0x114d txntype:-1 reqpath:n/a Error Path:/latest_producer_id_block Error:KeeperErrorCode = NodeExists for /latest_producer_id_block (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,333] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0x9 zxid:0x114e txntype:-1 reqpath:n/a Error Path:/log_dir_event_notification Error:KeeperErrorCode = NodeExists for /log_dir_event_notification (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,338] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0xa zxid:0x114f txntype:-1 reqpath:n/a Error Path:/config/topics Error:KeeperErrorCode = NodeExists for /config/topics (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,343] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0xb zxid:0x1150 txntype:-1 reqpath:n/a Error Path:/config/clients Error:KeeperErrorCode = NodeExists for /config/clients (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,347] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0xc zxid:0x1151 txntype:-1 reqpath:n/a Error Path:/config/users Error:KeeperErrorCode = NodeExists for /config/users (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:48,351] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:create cxid:0xd zxid:0x1152 txntype:-1 reqpath:n/a Error Path:/config/brokers Error:KeeperErrorCode = NodeExists for /config/brokers (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:49,231] INFO Cluster ID = WZLTJ1MoQSWx47SXB91frw (kafka.server.KafkaServer)
+[2018-11-25 14:27:49,472] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	compression.type = producer
+	connections.max.idle.ms = 600000
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 30000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 300000
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 1.1-IV0
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = null
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /tmp/kafka-logs
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.format.version = 1.1-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 1440
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 50
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 30000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 1
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 1
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = localhost:2181
+	zookeeper.connection.timeout.ms = 6000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2018-11-25 14:27:49,496] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = null
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 0
+	broker.id.generation.enable = true
+	broker.rack = null
+	compression.type = producer
+	connections.max.idle.ms = 600000
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 30000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 300000
+	group.min.session.timeout.ms = 6000
+	host.name = 
+	inter.broker.listener.name = null
+	inter.broker.protocol.version = 1.1-IV0
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = null
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /tmp/kafka-logs
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.format.version = 1.1-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1000012
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 1440
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 50
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 10000
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 30000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	security.inter.broker.protocol = PLAINTEXT
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 60000
+	transaction.max.timeout.ms = 900000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 1
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 1
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.connect = localhost:2181
+	zookeeper.connection.timeout.ms = 6000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 6000
+	zookeeper.set.acl = false
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2018-11-25 14:27:49,577] INFO [ThrottledRequestReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-11-25 14:27:49,577] INFO [ThrottledRequestReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-11-25 14:27:49,579] INFO [ThrottledRequestReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+[2018-11-25 14:27:49,757] INFO Loading logs. (kafka.log.LogManager)
+[2018-11-25 14:27:50,000] INFO [Log partition=post_profile-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,048] INFO [Log partition=post_profile-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 196 ms (kafka.log.Log)
+[2018-11-25 14:27:50,080] INFO [Log partition=get_propertyphotos-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,080] INFO [Log partition=get_propertyphotos-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2018-11-25 14:27:50,122] INFO [Log partition=post_login-0, dir=/tmp/kafka-logs] Loading producer state from offset 2 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,139] INFO [ProducerStateManager partition=post_login-0] Loading producer state from snapshot file '/tmp/kafka-logs/post_login-0/00000000000000000002.snapshot' (kafka.log.ProducerStateManager)
+[2018-11-25 14:27:50,182] INFO [Log partition=post_login-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 2 in 90 ms (kafka.log.Log)
+[2018-11-25 14:27:50,193] INFO [Log partition=get_propertydetails-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,193] INFO [Log partition=get_propertydetails-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 4 ms (kafka.log.Log)
+[2018-11-25 14:27:50,199] INFO [Log partition=post_ownerlogin-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,200] INFO [Log partition=post_ownerlogin-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms (kafka.log.Log)
+[2018-11-25 14:27:50,212] INFO [Log partition=post_bookproperty-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,213] INFO [Log partition=post_bookproperty-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 5 ms (kafka.log.Log)
+[2018-11-25 14:27:50,226] INFO [Log partition=get_searchresults-0, dir=/tmp/kafka-logs] Loading producer state from offset 9 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,227] INFO [ProducerStateManager partition=get_searchresults-0] Loading producer state from snapshot file '/tmp/kafka-logs/get_searchresults-0/00000000000000000009.snapshot' (kafka.log.ProducerStateManager)
+[2018-11-25 14:27:50,229] INFO [Log partition=get_searchresults-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 9 in 9 ms (kafka.log.Log)
+[2018-11-25 14:27:50,241] INFO [Log partition=post_sendmessage-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,242] INFO [Log partition=post_sendmessage-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 4 ms (kafka.log.Log)
+[2018-11-25 14:27:50,255] INFO [Log partition=post_lyp-0, dir=/tmp/kafka-logs] Loading producer state from offset 1 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,257] INFO [ProducerStateManager partition=post_lyp-0] Loading producer state from snapshot file '/tmp/kafka-logs/post_lyp-0/00000000000000000001.snapshot' (kafka.log.ProducerStateManager)
+[2018-11-25 14:27:50,260] INFO [Log partition=post_lyp-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 1 in 11 ms (kafka.log.Log)
+[2018-11-25 14:27:50,269] INFO [Log partition=post_signup-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,270] INFO [Log partition=post_signup-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 4 ms (kafka.log.Log)
+[2018-11-25 14:27:50,277] INFO [Log partition=get_dashboard-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,277] INFO [Log partition=get_dashboard-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2018-11-25 14:27:50,300] INFO [Log partition=get_home-0, dir=/tmp/kafka-logs] Loading producer state from offset 34 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,302] INFO [ProducerStateManager partition=get_home-0] Loading producer state from snapshot file '/tmp/kafka-logs/get_home-0/00000000000000000034.snapshot' (kafka.log.ProducerStateManager)
+[2018-11-25 14:27:50,307] INFO [Log partition=get_home-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 34 in 23 ms (kafka.log.Log)
+[2018-11-25 14:27:50,323] INFO [Log partition=response_topic-0, dir=/tmp/kafka-logs] Loading producer state from offset 46 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,325] INFO [ProducerStateManager partition=response_topic-0] Loading producer state from snapshot file '/tmp/kafka-logs/response_topic-0/00000000000000000046.snapshot' (kafka.log.ProducerStateManager)
+[2018-11-25 14:27:50,327] INFO [Log partition=response_topic-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 46 in 14 ms (kafka.log.Log)
+[2018-11-25 14:27:50,333] INFO [Log partition=get_profile-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,334] INFO [Log partition=get_profile-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms (kafka.log.Log)
+[2018-11-25 14:27:50,343] INFO [Log partition=get_inbox-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,343] INFO [Log partition=get_inbox-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 4 ms (kafka.log.Log)
+[2018-11-25 14:27:50,352] INFO [Log partition=post_book-0, dir=/tmp/kafka-logs] Loading producer state from offset 0 with message format version 2 (kafka.log.Log)
+[2018-11-25 14:27:50,353] INFO [Log partition=post_book-0, dir=/tmp/kafka-logs] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 5 ms (kafka.log.Log)
+[2018-11-25 14:27:50,361] INFO Logs loading complete in 603 ms. (kafka.log.LogManager)
+[2018-11-25 14:27:50,387] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+[2018-11-25 14:27:50,390] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+[2018-11-25 14:27:51,160] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)
+[2018-11-25 14:27:51,251] INFO [SocketServer brokerId=0] Started 1 acceptor threads (kafka.network.SocketServer)
+[2018-11-25 14:27:51,324] INFO [ExpirationReaper-0-Produce]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2018-11-25 14:27:51,325] INFO [ExpirationReaper-0-Fetch]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2018-11-25 14:27:51,327] INFO [ExpirationReaper-0-DeleteRecords]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2018-11-25 14:27:51,378] INFO [LogDirFailureHandler]: Starting (kafka.server.ReplicaManager$LogDirFailureHandler)
+[2018-11-25 14:27:51,480] INFO Creating /brokers/ids/0 (is it secure? false) (kafka.zk.KafkaZkClient)
+[2018-11-25 14:27:51,488] INFO Result of znode creation at /brokers/ids/0 is: OK (kafka.zk.KafkaZkClient)
+[2018-11-25 14:27:51,492] INFO Registered broker 0 at path /brokers/ids/0 with addresses: ArrayBuffer(EndPoint(10.250.11.123,9092,ListenerName(PLAINTEXT),PLAINTEXT)) (kafka.zk.KafkaZkClient)
+[2018-11-25 14:27:51,635] INFO [ExpirationReaper-0-topic]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2018-11-25 14:27:51,648] INFO Creating /controller (is it secure? false) (kafka.zk.KafkaZkClient)
+[2018-11-25 14:27:51,649] INFO [ExpirationReaper-0-Heartbeat]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2018-11-25 14:27:51,651] INFO [ExpirationReaper-0-Rebalance]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2018-11-25 14:27:51,674] INFO Result of znode creation at /controller is: OK (kafka.zk.KafkaZkClient)
+[2018-11-25 14:27:51,711] INFO [GroupCoordinator 0]: Starting up. (kafka.coordinator.group.GroupCoordinator)
+[2018-11-25 14:27:51,712] INFO [GroupCoordinator 0]: Startup complete. (kafka.coordinator.group.GroupCoordinator)
+[2018-11-25 14:27:51,718] INFO [GroupMetadataManager brokerId=0] Removed 0 expired offsets in 6 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2018-11-25 14:27:51,812] INFO [ProducerId Manager 0]: Acquired new producerId block (brokerId:0,blockStartProducerId:5000,blockEndProducerId:5999) by writing to Zk with path version 6 (kafka.coordinator.transaction.ProducerIdManager)
+[2018-11-25 14:27:51,913] INFO [TransactionCoordinator id=0] Starting up. (kafka.coordinator.transaction.TransactionCoordinator)
+[2018-11-25 14:27:51,925] INFO [Transaction Marker Channel Manager 0]: Starting (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+[2018-11-25 14:27:51,933] INFO [TransactionCoordinator id=0] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)
+[2018-11-25 14:27:52,186] INFO [/config/changes-event-process-thread]: Starting (kafka.common.ZkNodeChangeNotificationListener$ChangeEventProcessThread)
+[2018-11-25 14:27:52,242] INFO Got user-level KeeperException when processing sessionid:0x1674cfbe63d0000 type:delete cxid:0x63 zxid:0x1157 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:27:52,278] INFO [ReplicaFetcherManager on broker 0] Removed fetcher for partitions get_dashboard-0,get_searchresults-0,post_login-0,post_ownerlogin-0,get_propertydetails-0,get_home-0,get_inbox-0,post_sendmessage-0,get_profile-0,response_topic-0,get_propertyphotos-0,post_lyp-0,post_book-0,post_profile-0,post_bookproperty-0,post_signup-0 (kafka.server.ReplicaFetcherManager)
+[2018-11-25 14:27:52,299] INFO Kafka version : 1.1.0 (org.apache.kafka.common.utils.AppInfoParser)
+[2018-11-25 14:27:52,300] INFO Kafka commitId : fdcf75ea326b8e07 (org.apache.kafka.common.utils.AppInfoParser)
+[2018-11-25 14:27:52,303] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)
+[2018-11-25 14:27:52,322] INFO Replica loaded for partition post_lyp-0 with initial high watermark 1 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,330] INFO [Partition post_lyp-0 broker=0] post_lyp-0 starts at Leader Epoch 0 from offset 1. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,358] INFO Replica loaded for partition post_signup-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,358] INFO [Partition post_signup-0 broker=0] post_signup-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,361] INFO Replica loaded for partition post_book-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,362] INFO [Partition post_book-0 broker=0] post_book-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,365] INFO Replica loaded for partition post_sendmessage-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,366] INFO [Partition post_sendmessage-0 broker=0] post_sendmessage-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,370] INFO Replica loaded for partition get_inbox-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,370] INFO [Partition get_inbox-0 broker=0] get_inbox-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,375] INFO Replica loaded for partition get_profile-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,375] INFO [Partition get_profile-0 broker=0] get_profile-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,382] INFO Replica loaded for partition get_home-0 with initial high watermark 34 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,382] INFO [Partition get_home-0 broker=0] get_home-0 starts at Leader Epoch 0 from offset 34. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,387] INFO Replica loaded for partition get_searchresults-0 with initial high watermark 9 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,387] INFO [Partition get_searchresults-0 broker=0] get_searchresults-0 starts at Leader Epoch 0 from offset 9. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,392] INFO Replica loaded for partition post_ownerlogin-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,393] INFO [Partition post_ownerlogin-0 broker=0] post_ownerlogin-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,397] INFO Replica loaded for partition get_dashboard-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,397] INFO [Partition get_dashboard-0 broker=0] get_dashboard-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,402] INFO Replica loaded for partition get_propertydetails-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,402] INFO [Partition get_propertydetails-0 broker=0] get_propertydetails-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,407] INFO Replica loaded for partition post_profile-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,407] INFO [Partition post_profile-0 broker=0] post_profile-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,411] INFO Replica loaded for partition response_topic-0 with initial high watermark 46 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,411] INFO [Partition response_topic-0 broker=0] response_topic-0 starts at Leader Epoch 0 from offset 46. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,415] INFO Replica loaded for partition post_bookproperty-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,416] INFO [Partition post_bookproperty-0 broker=0] post_bookproperty-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,419] INFO Replica loaded for partition post_login-0 with initial high watermark 2 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,420] INFO [Partition post_login-0 broker=0] post_login-0 starts at Leader Epoch 0 from offset 2. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,424] INFO Replica loaded for partition get_propertyphotos-0 with initial high watermark 0 (kafka.cluster.Replica)
+[2018-11-25 14:27:52,424] INFO [Partition get_propertyphotos-0 broker=0] get_propertyphotos-0 starts at Leader Epoch 0 from offset 0. Previous Leader Epoch was: -1 (kafka.cluster.Partition)
+[2018-11-25 14:27:52,457] INFO [ReplicaAlterLogDirsManager on broker 0] Added fetcher for partitions List() (kafka.server.ReplicaAlterLogDirsManager)
+[2018-11-25 14:29:29,592] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:62073 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:29,601] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:62073 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:29,605] INFO Established session 0x1674cfbe63d0001 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:62073 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:29,908] INFO Processed session termination for sessionid: 0x1674cfbe63d0001 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:29,915] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:62073 which had sessionid 0x1674cfbe63d0001 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:31,692] INFO Accepted socket connection from /127.0.0.1:62075 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:31,700] INFO Client attempting to establish new session at /127.0.0.1:62075 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:31,703] INFO Established session 0x1674cfbe63d0002 with negotiated timeout 30000 for client /127.0.0.1:62075 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:31,934] INFO Processed session termination for sessionid: 0x1674cfbe63d0002 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:31,937] INFO Closed socket connection for client /127.0.0.1:62075 which had sessionid 0x1674cfbe63d0002 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:33,936] INFO Accepted socket connection from /127.0.0.1:62077 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:33,945] INFO Client attempting to establish new session at /127.0.0.1:62077 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:33,948] INFO Established session 0x1674cfbe63d0003 with negotiated timeout 30000 for client /127.0.0.1:62077 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:34,211] INFO Processed session termination for sessionid: 0x1674cfbe63d0003 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:34,215] INFO Closed socket connection for client /127.0.0.1:62077 which had sessionid 0x1674cfbe63d0003 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:36,114] INFO Accepted socket connection from /127.0.0.1:62079 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:36,123] INFO Client attempting to establish new session at /127.0.0.1:62079 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:36,126] INFO Established session 0x1674cfbe63d0004 with negotiated timeout 30000 for client /127.0.0.1:62079 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:36,515] INFO Processed session termination for sessionid: 0x1674cfbe63d0004 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:36,519] INFO Closed socket connection for client /127.0.0.1:62079 which had sessionid 0x1674cfbe63d0004 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:38,601] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:62083 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:38,611] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:62083 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:38,614] INFO Established session 0x1674cfbe63d0005 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:62083 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:38,908] INFO Processed session termination for sessionid: 0x1674cfbe63d0005 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:38,913] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:62083 which had sessionid 0x1674cfbe63d0005 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:40,884] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:62085 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:40,894] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:62085 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:40,899] INFO Established session 0x1674cfbe63d0006 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:62085 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:41,179] INFO Processed session termination for sessionid: 0x1674cfbe63d0006 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:41,182] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:62085 which had sessionid 0x1674cfbe63d0006 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:43,275] INFO Accepted socket connection from /127.0.0.1:62087 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:43,284] INFO Client attempting to establish new session at /127.0.0.1:62087 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:43,287] INFO Established session 0x1674cfbe63d0007 with negotiated timeout 30000 for client /127.0.0.1:62087 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:43,532] INFO Processed session termination for sessionid: 0x1674cfbe63d0007 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:43,535] INFO Closed socket connection for client /127.0.0.1:62087 which had sessionid 0x1674cfbe63d0007 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:45,267] INFO Accepted socket connection from /127.0.0.1:62089 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:45,275] INFO Client attempting to establish new session at /127.0.0.1:62089 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:45,279] INFO Established session 0x1674cfbe63d0008 with negotiated timeout 30000 for client /127.0.0.1:62089 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:45,509] INFO Processed session termination for sessionid: 0x1674cfbe63d0008 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:45,513] INFO Closed socket connection for client /127.0.0.1:62089 which had sessionid 0x1674cfbe63d0008 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:47,274] INFO Accepted socket connection from /127.0.0.1:62091 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:47,283] INFO Client attempting to establish new session at /127.0.0.1:62091 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:47,286] INFO Established session 0x1674cfbe63d0009 with negotiated timeout 30000 for client /127.0.0.1:62091 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:47,537] INFO Processed session termination for sessionid: 0x1674cfbe63d0009 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:47,540] INFO Closed socket connection for client /127.0.0.1:62091 which had sessionid 0x1674cfbe63d0009 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:49,540] INFO Accepted socket connection from /127.0.0.1:62093 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:49,551] INFO Client attempting to establish new session at /127.0.0.1:62093 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:49,557] INFO Established session 0x1674cfbe63d000a with negotiated timeout 30000 for client /127.0.0.1:62093 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:49,823] INFO Processed session termination for sessionid: 0x1674cfbe63d000a (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:49,826] INFO Closed socket connection for client /127.0.0.1:62093 which had sessionid 0x1674cfbe63d000a (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:51,606] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:62096 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:51,616] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:62096 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:51,619] INFO Established session 0x1674cfbe63d000b with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:62096 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:51,854] INFO Processed session termination for sessionid: 0x1674cfbe63d000b (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:51,857] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:62096 which had sessionid 0x1674cfbe63d000b (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:53,785] INFO Accepted socket connection from /127.0.0.1:62098 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:53,798] INFO Client attempting to establish new session at /127.0.0.1:62098 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:53,801] INFO Established session 0x1674cfbe63d000c with negotiated timeout 30000 for client /127.0.0.1:62098 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:54,159] INFO Processed session termination for sessionid: 0x1674cfbe63d000c (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:54,166] INFO Closed socket connection for client /127.0.0.1:62098 which had sessionid 0x1674cfbe63d000c (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:56,063] INFO Accepted socket connection from /127.0.0.1:62100 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:56,073] INFO Client attempting to establish new session at /127.0.0.1:62100 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:56,078] INFO Established session 0x1674cfbe63d000d with negotiated timeout 30000 for client /127.0.0.1:62100 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:56,307] INFO Processed session termination for sessionid: 0x1674cfbe63d000d (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:56,310] INFO Closed socket connection for client /127.0.0.1:62100 which had sessionid 0x1674cfbe63d000d (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:29:58,053] INFO Accepted socket connection from /127.0.0.1:62102 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:29:58,061] INFO Client attempting to establish new session at /127.0.0.1:62102 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:58,064] INFO Established session 0x1674cfbe63d000e with negotiated timeout 30000 for client /127.0.0.1:62102 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:29:58,297] INFO Processed session termination for sessionid: 0x1674cfbe63d000e (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:29:58,299] INFO Closed socket connection for client /127.0.0.1:62102 which had sessionid 0x1674cfbe63d000e (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:30:00,068] INFO Accepted socket connection from /127.0.0.1:62104 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:00,076] INFO Client attempting to establish new session at /127.0.0.1:62104 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:00,079] INFO Established session 0x1674cfbe63d000f with negotiated timeout 30000 for client /127.0.0.1:62104 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:00,318] INFO Processed session termination for sessionid: 0x1674cfbe63d000f (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:30:00,321] INFO Closed socket connection for client /127.0.0.1:62104 which had sessionid 0x1674cfbe63d000f (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:30:02,094] INFO Accepted socket connection from /0:0:0:0:0:0:0:1:62106 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:02,102] INFO Client attempting to establish new session at /0:0:0:0:0:0:0:1:62106 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:02,105] INFO Established session 0x1674cfbe63d0010 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:62106 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:02,356] INFO Processed session termination for sessionid: 0x1674cfbe63d0010 (org.apache.zookeeper.server.PrepRequestProcessor)
+[2018-11-25 14:30:02,359] INFO Closed socket connection for client /0:0:0:0:0:0:0:1:62106 which had sessionid 0x1674cfbe63d0010 (org.apache.zookeeper.server.NIOServerCnxn)
+[2018-11-25 14:30:31,622] INFO Accepted socket connection from /127.0.0.1:62110 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:31,635] WARN Connection request from old client /127.0.0.1:62110; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:31,636] INFO Client attempting to establish new session at /127.0.0.1:62110 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:31,639] INFO Established session 0x1674cfbe63d0011 with negotiated timeout 30000 for client /127.0.0.1:62110 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,665] INFO Accepted socket connection from /127.0.0.1:62123 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,668] INFO Accepted socket connection from /127.0.0.1:62124 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,674] INFO Accepted socket connection from /127.0.0.1:62125 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,674] INFO Accepted socket connection from /127.0.0.1:62126 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,675] INFO Accepted socket connection from /127.0.0.1:62127 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,676] INFO Accepted socket connection from /127.0.0.1:62128 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,676] INFO Accepted socket connection from /127.0.0.1:62129 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,677] INFO Accepted socket connection from /127.0.0.1:62130 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,677] INFO Accepted socket connection from /127.0.0.1:62131 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,677] INFO Accepted socket connection from /127.0.0.1:62132 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,678] INFO Accepted socket connection from /127.0.0.1:62133 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,680] WARN Connection request from old client /127.0.0.1:62123; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,680] INFO Client attempting to establish new session at /127.0.0.1:62123 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,681] WARN Connection request from old client /127.0.0.1:62124; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,681] INFO Client attempting to establish new session at /127.0.0.1:62124 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,682] INFO Accepted socket connection from /127.0.0.1:62134 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,683] INFO Accepted socket connection from /127.0.0.1:62135 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,684] INFO Accepted socket connection from /127.0.0.1:62136 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:30:55,685] WARN Connection request from old client /127.0.0.1:62125; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,686] INFO Client attempting to establish new session at /127.0.0.1:62125 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,687] INFO Established session 0x1674cfbe63d0012 with negotiated timeout 30000 for client /127.0.0.1:62123 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,690] WARN Connection request from old client /127.0.0.1:62126; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,690] INFO Client attempting to establish new session at /127.0.0.1:62126 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,690] INFO Established session 0x1674cfbe63d0013 with negotiated timeout 30000 for client /127.0.0.1:62124 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,691] INFO Established session 0x1674cfbe63d0014 with negotiated timeout 30000 for client /127.0.0.1:62125 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,692] WARN Connection request from old client /127.0.0.1:62127; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,692] INFO Client attempting to establish new session at /127.0.0.1:62127 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,693] WARN Connection request from old client /127.0.0.1:62128; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,694] INFO Client attempting to establish new session at /127.0.0.1:62128 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,694] WARN Connection request from old client /127.0.0.1:62129; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,695] INFO Client attempting to establish new session at /127.0.0.1:62129 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,698] WARN Connection request from old client /127.0.0.1:62130; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,699] INFO Client attempting to establish new session at /127.0.0.1:62130 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,702] WARN Connection request from old client /127.0.0.1:62131; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,703] INFO Client attempting to establish new session at /127.0.0.1:62131 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,703] INFO Established session 0x1674cfbe63d0015 with negotiated timeout 30000 for client /127.0.0.1:62126 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,707] INFO Established session 0x1674cfbe63d0016 with negotiated timeout 30000 for client /127.0.0.1:62127 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,708] INFO Established session 0x1674cfbe63d0017 with negotiated timeout 30000 for client /127.0.0.1:62128 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,708] WARN Connection request from old client /127.0.0.1:62132; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,708] INFO Established session 0x1674cfbe63d0018 with negotiated timeout 30000 for client /127.0.0.1:62129 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,709] INFO Client attempting to establish new session at /127.0.0.1:62132 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,710] INFO Established session 0x1674cfbe63d0019 with negotiated timeout 30000 for client /127.0.0.1:62130 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,710] INFO Established session 0x1674cfbe63d001a with negotiated timeout 30000 for client /127.0.0.1:62131 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,711] WARN Connection request from old client /127.0.0.1:62133; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,712] INFO Client attempting to establish new session at /127.0.0.1:62133 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,713] INFO Established session 0x1674cfbe63d001b with negotiated timeout 30000 for client /127.0.0.1:62132 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,717] INFO Established session 0x1674cfbe63d001c with negotiated timeout 30000 for client /127.0.0.1:62133 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,724] WARN Connection request from old client /127.0.0.1:62134; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,724] INFO Client attempting to establish new session at /127.0.0.1:62134 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,725] WARN Connection request from old client /127.0.0.1:62135; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,725] INFO Client attempting to establish new session at /127.0.0.1:62135 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,726] WARN Connection request from old client /127.0.0.1:62136; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,726] INFO Client attempting to establish new session at /127.0.0.1:62136 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,727] INFO Established session 0x1674cfbe63d001d with negotiated timeout 30000 for client /127.0.0.1:62134 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,731] INFO Established session 0x1674cfbe63d001e with negotiated timeout 30000 for client /127.0.0.1:62135 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:30:55,732] INFO Established session 0x1674cfbe63d001f with negotiated timeout 30000 for client /127.0.0.1:62136 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:31:45,427] INFO Accepted socket connection from /127.0.0.1:62176 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+[2018-11-25 14:31:45,434] WARN Connection request from old client /127.0.0.1:62176; will be dropped if server is in r-o mode (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:31:45,435] INFO Client attempting to establish new session at /127.0.0.1:62176 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:31:45,444] INFO Established session 0x1674cfbe63d0020 with negotiated timeout 30000 for client /127.0.0.1:62176 (org.apache.zookeeper.server.ZooKeeperServer)
+[2018-11-25 14:33:30,852] INFO Terminating process due to signal SIGHUP (kafka.Kafka$)
+[2018-11-25 14:33:30,877] INFO [KafkaServer id=0] shutting down (kafka.server.KafkaServer)
+[2018-11-25 14:33:30,886] INFO [KafkaServer id=0] Starting controlled shutdown (kafka.server.KafkaServer)
+[2018-11-25 14:33:31,225] WARN Session 0x1674cfbe63d0000 for server localhost/127.0.0.1:2181, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:68)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:366)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:31,337] INFO [ZooKeeperClient] Waiting until connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-11-25 14:33:31,337] INFO [ZooKeeperClient] Connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-11-25 14:33:31,768] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:31,769] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:31,870] INFO [ZooKeeperClient] Waiting until connected. (kafka.zookeeper.ZooKeeperClient)
+[2018-11-25 14:33:33,862] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:33,863] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:34,590] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:34,591] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:36,508] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:36,509] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:37,462] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:37,463] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:39,506] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:39,508] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:40,022] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:40,023] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:41,786] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:41,787] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:42,682] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:42,683] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:44,431] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:44,431] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:44,795] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:44,796] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:46,450] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:46,451] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:46,913] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:46,914] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:48,672] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:48,673] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:49,641] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:49,641] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:51,522] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:51,522] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:52,396] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:52,399] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:53,690] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:53,691] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:54,369] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:54,369] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:55,766] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:55,769] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:56,167] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:56,174] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:57,540] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:57,541] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:57,707] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:57,707] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:33:59,501] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:33:59,508] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:00,221] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:00,222] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:01,364] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:01,365] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:01,657] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:01,657] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:03,395] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:03,396] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:03,515] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:03,516] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:05,579] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:05,580] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:06,412] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:06,412] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:07,747] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:07,750] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:08,837] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:08,837] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:10,476] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:10,477] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:11,075] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:11,076] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:12,723] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:12,724] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:13,492] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:13,493] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:15,132] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:15,133] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:16,046] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:16,046] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:17,665] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:17,666] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:18,740] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:18,741] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:20,491] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:20,492] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:21,016] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:21,017] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:22,964] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:22,964] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:23,379] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:23,381] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:25,182] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:25,183] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:25,872] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:25,873] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:27,133] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:27,140] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:28,188] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:28,189] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:29,332] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:29,333] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:29,538] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:29,538] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:31,054] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:31,055] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:31,584] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:31,585] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:33,435] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:33,436] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:34,336] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:34,337] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:35,736] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:35,737] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:36,459] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:36,459] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:37,957] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:37,958] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:38,732] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:38,733] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:39,936] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:39,937] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:40,073] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:40,074] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:41,287] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:41,288] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:42,351] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:42,352] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:44,258] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:44,259] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:45,161] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:45,162] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:46,874] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:46,875] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:47,185] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:47,186] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:48,429] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:48,430] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:48,791] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:48,792] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:50,043] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:50,044] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:51,034] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:51,035] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:52,978] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:52,979] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:53,940] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:53,941] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:55,541] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:55,542] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)
+[2018-11-25 14:34:56,571] INFO Opening socket connection to server localhost/0:0:0:0:0:0:0:1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2018-11-25 14:34:56,579] WARN Session 0x1674cfbe63d0000 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1141)

@@ -17,8 +17,8 @@ class Property extends Component {
     super(props);
     const {
       where,
-      //startdate,
-      //enddate,
+      startdate,
+      enddate,
       guests,
       propnum_pk,
       email,
