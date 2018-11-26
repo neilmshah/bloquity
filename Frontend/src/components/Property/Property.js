@@ -46,19 +46,19 @@ class Property extends Component {
       owner_lname
     } = this.props.location.state;
 
-    let rate = Number(nbr);
-    let date1 = new Date(startdate);
-    let date2 = new Date(enddate);
-    let res = Math.abs(date1 - date2) / 1000;
-    let nights = Math.floor(res / 86400);
-    let fee = parseInt(cf, 10);
-    let total = nights * rate + fee;
+    // let rate = Number(nbr);
+    // let date1 = new Date(startdate);
+    // let date2 = new Date(enddate);
+    // let res = Math.abs(date1 - date2) / 1000;
+    // let nights = Math.floor(res / 86400);
+    // let fee = parseInt(cf, 10);
+    // let total = nights * rate + fee;
 
     //maintain the state required for this component
     this.state = {
       where: where,
-      startdate_me: startdate.slice(0, 10),
-      enddate_me: enddate.slice(0, 10),
+      // startdate_me: startdate.slice(0, 10),
+      // enddate_me: enddate.slice(0, 10),
       guests: guests,
       propnum_pk: propnum_pk,
       prop_owner_email: email,
@@ -91,7 +91,7 @@ class Property extends Component {
       pic5: "",
       owner_fname: owner_fname,
       owner_lname: owner_lname,
-      total: total,
+      //total: total,
       profileicon:
         "https://csvcus.homeaway.com/rsrcs/cdn-logos/2.10.3/bce/brand/misc/default-profile-pic.png"
     };
@@ -242,10 +242,10 @@ class Property extends Component {
     if (token) {
       navLogin = (
         <div>
-          <div class="header-bce bluefont">
+          <div class="header-bce-home_New bluefont-home">
             <div id="hal-home" class="navbar-brand bluefont-home">
               <a href="/home" class="bluefont-home">
-                HomeAway
+                Bloquity
                 <span class="sup">&reg;</span>
               </a>
             </div>
@@ -259,12 +259,12 @@ class Property extends Component {
               href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css"
               rel="stylesheet"
             />
-            <a href="#" class="flag-icon-background flag-icon-us flag inline">
+            {/* <a href="#" class="flag-icon-background flag-icon-us flag inline">
               {"   "}
-            </a>
-            <a href="#" class="tb bluefont inline">
+            </a> */}
+            {/* <a href="#" class="tb bluefont inline">
               Trip Boards
-            </a>
+            </a> */}
             <div class="btn-group inline dropdownnav">
               <div
                 class="btn-home inline bluefont"
@@ -524,9 +524,14 @@ class Property extends Component {
           </div>
 
           {/*-----------------------------------------PHOTO -------------------------------------*/}
+
+          <br />
+          <p class="grayie">Description of Property: </p>
+          <p class="propdescclass">{this.state.propdesc}</p>
+
           <div class="propinfo desc">
             <h2>{this.state.headline}</h2>{" "}
-            <p class="grayie">
+            {/* <p class="grayie">
               <span>
                 {" "}
                 <i class="glyphicon glyphicon-map-marker" />{" "}
@@ -539,10 +544,10 @@ class Property extends Component {
                 {this.state.country.charAt(0).toUpperCase() +
                   this.state.country.slice(1)}
               </span>
-            </p>
+            </p> */}
             <br />
             <br />
-            <div class="iconsprop">
+            {/* <div class="iconsprop">
               <i class="picon glyphicon glyphicon-home">
                 <br />
                 <span class="iconnames">
@@ -578,47 +583,93 @@ class Property extends Component {
                   Minimum Stay: {this.state.minstay}
                 </span>
               </i>
-            </div>
+            </div> */}
             <br />
             <br />
             <hr />
             <br />
-            <p class="grayie">About the Property</p>
-            <p class="propdescclass">{this.state.propdesc}</p>
+            {/* <p class="grayie">About the Property</p>
+            <p class="propdescclass">{this.state.propdesc}</p> */}
             <br />
             <br />
             <br />
-            <p class="grayie">Property Size</p>
-            <p class="sqftclass">{this.state.sqft}</p>
+            {/* <p class="grayie">Property Size</p>
+            <p class="sqftclass">{this.state.sqft}</p> */}
             <br />
             <br />
             <br />
-            <b>Property Manager</b>
+            {/* <b>Property Manager</b>
             <br />
             <p class="grayie">
               {this.state.owner_fname} {this.state.owner_lname}
-            </p>
+            </p> */}
             <br />
             <br />
             <hr />
           </div>
           <div class="detailscontainer">
             <div class="coninfo">
-              <h2>
+              <p class="grayie">Details </p>
+
+              <div class="iconsprop">
+                <p class="grayie">Address of Property</p>
+                <p class="sqftclass">{this.state.sqft}</p>
+                <br />
+                <p class="grayie">Property Size</p>
+                <p class="sqftclass">{this.state.sqft}</p>
+                <i class="picon glyphicon glyphicon-home">
+                  <br />
+                  <span class="iconnames">
+                    {" "}
+                    {this.state.proptype.charAt(0).toUpperCase() +
+                      this.state.proptype.slice(1)}
+                  </span>
+                </i>
+                <i class=" picon glyphicon glyphicon-bed">
+                  {" "}
+                  <br />
+                  <span class="iconnames">Rooms: {this.state.rooms}</span>
+                </i>
+                {/* <i class=" picon glyphicon glyphicon-user">
+                  <br />
+                  <span class="iconnames">
+                    Sleeps: {this.state.accomodates}
+                  </span>
+                </i> */}
+                <link
+                  rel="stylesheet"
+                  href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+                  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+                  crossorigin="anonymous"
+                />
+                <i class=" picon fas fa-bath">
+                  {" "}
+                  <br />
+                  <span class="iconnames">Baths: {this.state.bathrooms}</span>
+                </i>
+                {/* <i class="picon far fa-moon">
+                  {" "}
+                  <br />
+                  <span class="iconnames">
+                    Minimum Stay: {this.state.minstay}
+                  </span>
+                </i> */}
+              </div>
+              {/* <h2>
                 ${this.state.nbr}
                 <span class="grayie small"> per night</span>
-              </h2>
+              </h2> */}
               <br />
               <br />
-              <p>
+              {/* <p>
                 <span class="grayie">
                   <i class="fas fa-check-circle green" />
                   {"  "}
                   Your dates are{" "}
                 </span>
                 <b>Available!</b>
-              </p>
-              <table>
+              </p> */}
+              {/* <table>
                 <tr>
                   <td class="borderbox spaces">
                     <span class="grayie"> Check in:</span>
@@ -639,26 +690,38 @@ class Property extends Component {
                     {this.state.guests} guest
                   </td>
                 </tr>
-              </table>
-              <br />
+              </table> */}
+              {/* <br />
               <p class="grayie">Total: ${this.state.total}</p>
               <p class="grayie small">Includes taxes and fees.</p>
-              <br />
+              <br /> */}
               <button class="homesearchbutton book" onClick={this.bookNow}>
-                Book Now
-              </button>
-              <button onClick={this.sendMessage} class="messagebutton ">
-                Ask Owner a question
+                Buy
               </button>
               <br />
-              <div class="small discpay">
+              <br />
+              {/* <button onClick={this.sendMessage} class="messagebutton ">
+                Ask Owner a question
+              </button> */}
+              <button class="homesearchbutton book" onClick={this.bookNow}>
+                View Transaction History
+              </button>
+              <br />
+              {/* <div class="small discpay">
                 <span class="grayie">For booking assistance, call</span>{" "}
                 <b>888-829-7076</b>
                 <br />
                 <b>Property #</b> <span class="grayie">4578714</span>{" "}
                 <b>Unit#</b>
                 <span class="grayie">5204351</span>
-              </div>
+              </div> */}
+              <br />
+              <br />
+              <b>Property Manager</b>
+              <br />
+              <p class="grayie">
+                {this.state.owner_fname} {this.state.owner_lname}
+              </p>
             </div>
           </div>
         </div>

@@ -44,15 +44,15 @@ class SearchResults extends Component {
       profileicon:
         "https://csvcus.homeaway.com/rsrcs/cdn-logos/2.10.3/bce/brand/misc/default-profile-pic.png",
       pageSize: 10,
-      currentPage: 1
-      // pricefilter: null,
-      // fromfilter: null,
-      // tofilter: null,
-      // roomFilter: null
+      currentPage: 1,
+      pricefilter: null,
+      //fromfilter: null,
+      //tofilter: null,
+      roomFilter: null
     };
     this.handleLogout = this.handleLogout.bind(this);
-    // this.handlePriceFilter = this.handlePriceFilter.bind(this);
-    // this.handleRoomFilter = this.handleRoomFilter.bind(this);
+    this.handlePriceFilter = this.handlePriceFilter.bind(this);
+    this.handleRoomFilter = this.handleRoomFilter.bind(this);
     // this.handleToFilter = this.handleToFilter.bind(this);
     // this.handleFromFilter = this.handleFromFilter.bind(this);
 
@@ -98,11 +98,11 @@ class SearchResults extends Component {
   handlePageChange = page => {
     this.setState({ currentPage: page });
   };
-  // handlePriceFilter = e => {
-  //   this.setState({
-  //     pricefilter: e.target.value
-  //   });
-  // };
+  handlePriceFilter = e => {
+    this.setState({
+      pricefilter: e.target.value
+    });
+  };
   // handleFromFilter = e => {
   //   this.setState({
   //     fromfilter: e.target.value
@@ -113,11 +113,11 @@ class SearchResults extends Component {
   //     tofilter: e.target.value
   //   });
   // };
-  // handleRoomFilter = e => {
-  //   this.setState({
-  //     roomfilter: e.target.value
-  //   });
-  // };
+  handleRoomFilter = e => {
+    this.setState({
+      roomfilter: e.target.value
+    });
+  };
 
   render() {
     //redirect based on successful login
@@ -132,10 +132,10 @@ class SearchResults extends Component {
       //console.log("DATE: ", new Date(r.startdate));
     });
 
-    // if (this.state.pricefilter != null && this.state.pricefilter != "")
-    //   propnew = propnew.filter(r => r.nbr <= this.state.pricefilter);
-    // if (this.state.roomfilter != null && this.state.roomfilter != "")
-    //   propnew = propnew.filter(r => r.rooms == this.state.roomfilter);
+    if (this.state.pricefilter != null && this.state.pricefilter != "")
+      propnew = propnew.filter(r => r.price <= this.state.pricefilter);
+    if (this.state.roomfilter != null && this.state.roomfilter != "")
+      propnew = propnew.filter(r => r.rooms == this.state.roomfilter);
     // if (this.state.fromfilter != null) {
     //   propnew = propnew.filter(r => {
     //     return new Date(r.startdate) <= new Date(this.state.fromfilter);
@@ -177,6 +177,7 @@ class SearchResults extends Component {
                       fname: this.state.fname,
                       lname: this.state.lname,
                       country: r.country,
+                      price: r.price,
 
                       proptype: r.proptype,
                       streetaddr: r.streetaddr,
@@ -213,10 +214,10 @@ class SearchResults extends Component {
               </td>
               <br />
               {/* doubt */}
-              <br /> <td>${r.nbr} per night</td>
+              <br /> <td>Price : ${r.price}</td>
               {console.log(r.photos[0])}
             </div>
-            {/* <img class="proppp" src={path.join(__dirname, "..", r.photos[0])} /> */}
+            {/* { <img class="proppp" src={path.join(__dirname, "..", r.photos[0])} /> } */}
           </tr>
         );
       });
@@ -456,7 +457,9 @@ class SearchResults extends Component {
         {navLogin}
         <br />
         <br />
-        {/* <label class="filterlabel">Price</label>
+        <label class="filterresultslabel">Filter Results: </label>
+        <br />
+        <label class="filterlabel">Price:</label>
         <input
           type="number"
           id="myInput"
@@ -466,21 +469,21 @@ class SearchResults extends Component {
           min="0"
           step="1"
         />
-        <label class="filterlabel">From</label>
+        {/* <label class="filterlabel">From</label>
         <input
           type="date"
           id="myInput"
           onChange={this.handleFromFilter}
           class="filters"
-        />
-        <label class="filterlabel">To</label>
+        /> */}
+        {/* <label class="filterlabel">To</label>
         <input
           type="date"
           id="myInput"
           onChange={this.handleToFilter}
           class="filters"
-        />
-        <label class="filterlabel">Rooms</label>
+        /> */}
+        <label class="filterlabel">Rooms: </label>
         <input
           type="number"
           id="myInput"
@@ -488,7 +491,7 @@ class SearchResults extends Component {
           class="filters"
           min="0"
           step="1"
-        /> */}
+        />
         <br />
         <br />
         <table class="table" id="myTable">

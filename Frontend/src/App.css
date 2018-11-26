@@ -1163,6 +1163,7 @@ input[type="date"]:focus::after {
 }
 
 .grayie {
+  margin-left: 10vw;
   color: gray;
 }
 
@@ -2003,8 +2004,9 @@ div.card {
   right: -7vw;
 }
 .propinfo {
-  position: absolute;
+  position: static;
   top: 50vw;
+  margin-top: 10vm;
   padding: 5vw;
   width: 75vw;
 }
@@ -2024,6 +2026,7 @@ div.card {
 }
 
 .propdescclass {
+  margin-left: 10vw;
   word-wrap: break-word;
 }
 
