@@ -14,6 +14,8 @@ var PostProfile = require("./services/postprofile.js");
 var ListYourProperty = require("./services/lyp.js");
 var SendMessage = require("./services/sendmessage.js");
 var Inbox = require("./services/inbox.js");
+var GetTransactionHistory = require("./services/transactionHistory.js");
+var BuyProperty = require("./services/buyproperty.js");
 
 function handleTopicRequest(topic_name, fname) {
   //var topic_name = 'root_topic';
@@ -60,3 +62,5 @@ handleTopicRequest("post_profile", PostProfile);
 handleTopicRequest("post_lyp", ListYourProperty);
 handleTopicRequest("post_sendmessage", SendMessage);
 handleTopicRequest("get_inbox", Inbox);
+handleTopicRequest("get_transaction_history", GetTransactionHistory);
+handleTopicRequest("post_buyproperty", BuyProperty);
