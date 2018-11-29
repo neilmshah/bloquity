@@ -71,6 +71,18 @@ module.exports = mongoose.model(
     },
     owner_lname: {
       type: String
+    },
+    yearBuilt: {
+      type: String
+    },
+    parkingSpots: {
+      type: String
+    },
+    price: {
+      type: String
+    },
+    sqft: {
+      type: String
     }
   },
   "property_details"

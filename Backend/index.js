@@ -20,6 +20,8 @@ var profile = require("./routes/profile.js");
 var inbox = require("./routes/inbox.js");
 var lyp = require("./routes/lyp.js");
 var bookproperty = require("./routes/bookproperty.js");
+var transactionHistory = require("./routes/transactionHistory.js");
+var buyproperty = require("./routes/buyproperty.js");
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -71,6 +73,8 @@ app.use(
 app.use("/inbox", inbox);
 app.use("/lyp", lyp);
 app.use("/bookproperty", bookproperty);
+app.use("/transactionhistory", transactionHistory);
+app.use("/buyproperty", buyproperty);
 
 //Route for profile page with all details
 
