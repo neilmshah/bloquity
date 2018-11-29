@@ -1,5 +1,5 @@
 
-## BLOQUIY is a Web App that uses BlockChain for RealEsate title records
+## BLOQUITY is a Web App that uses BlockChain for Real Estate title records
 
 ### Problem statement: 
 
