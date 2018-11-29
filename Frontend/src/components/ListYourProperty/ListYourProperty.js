@@ -34,10 +34,15 @@ class ListYourProperty extends Component {
       rooms: "",
       bathrooms: "",
       accomodates: "",
-      startdate: "",
-      enddate: "",
-      nbr: "",
-      minstay: "",
+      sqft: "",
+      yearbuilt: "",
+      parking: "",
+
+      //startdate: "",
+      //enddate: "",
+      //nbr: "",
+      pricing: "",
+      //minstay: "",
       cf: "",
       activelocation: "",
       files: [],
@@ -65,14 +70,20 @@ class ListYourProperty extends Component {
 
     this.roomsChangeHandler = this.roomsChangeHandler.bind(this);
     this.accomodatesChangeHandler = this.accomodatesChangeHandler.bind(this);
+    this.sqftChangeHandler = this.sqftChangeHandler.bind(this);
+    this.yearBuiltChangeHandler = this.yearBuiltChangeHandler.bind(this);
+    this.parkingChangeHandler = this.parkingChangeHandler.bind(this);
     this.bathroomsChangeHandler = this.bathroomsChangeHandler.bind(this);
-    this.startdateChangeHandler = this.startdateChangeHandler.bind(this);
-    this.enddateChangeHandler = this.enddateChangeHandler.bind(this);
-    this.nbrChangeHandler = this.nbrChangeHandler.bind(this);
+    // this.startdateChangeHandler = this.startdateChangeHandler.bind(this);
+    //this.enddateChangeHandler = this.enddateChangeHandler.bind(this);
+    //this.nbrChangeHandler = this.nbrChangeHandler.bind(this);
+    this.pricingChangeHandler = this.pricingChangeHandler.bind(this);
     this.cfChangeHandler = this.cfChangeHandler.bind(this);
-    this.minstayChangeHandler = this.minstayChangeHandler.bind(this);
+    // this.minstayChangeHandler = this.minstayChangeHandler.bind(this);
   }
   componentDidMount() {
+    document.title = "Bloquity";
+
     if (localStorage.getItem("token")) {
       axios.defaults.headers.common["Authorization"] = token;
       axios
@@ -118,12 +129,21 @@ class ListYourProperty extends Component {
     } else alert("Maximum number of photos is 5!");
   };
 
-  nbrChangeHandler = e => {
+  // nbrChangeHandler = e => {
+  //   const name = e.target.name;
+  //   this.setState({
+  //     [name]: e.target.value
+  //   });
+  //   this.showInputError("nbr");
+  //   this.showFormErrors();
+  // };
+
+  pricingChangeHandler = e => {
     const name = e.target.name;
     this.setState({
       [name]: e.target.value
     });
-    this.showInputError("nbr");
+    this.showInputError("pricing");
     this.showFormErrors();
   };
 
@@ -134,14 +154,14 @@ class ListYourProperty extends Component {
     });
   };
 
-  minstayChangeHandler = e => {
-    const name = e.target.name;
-    this.setState({
-      [name]: e.target.value
-    });
-    this.showInputError("minstay");
-    this.showFormErrors();
-  };
+  // minstayChangeHandler = e => {
+  //   const name = e.target.name;
+  //   this.setState({
+  //     [name]: e.target.value
+  //   });
+  //   this.showInputError("minstay");
+  //   this.showFormErrors();
+  // };
 
   accomodatesChangeHandler = e => {
     const name = e.target.name;
@@ -152,23 +172,50 @@ class ListYourProperty extends Component {
     this.showFormErrors();
   };
 
-  startdateChangeHandler = e => {
+  sqftChangeHandler = e => {
     const name = e.target.name;
     this.setState({
       [name]: e.target.value
     });
-    this.showInputError("startdate");
+    this.showInputError("sqft");
     this.showFormErrors();
   };
 
-  enddateChangeHandler = e => {
+  yearBuiltChangeHandler = e => {
     const name = e.target.name;
     this.setState({
       [name]: e.target.value
     });
-    this.showInputError("enddate");
+    this.showInputError("yearbuilt");
     this.showFormErrors();
   };
+
+  parkingChangeHandler = e => {
+    const name = e.target.name;
+    this.setState({
+      [name]: e.target.value
+    });
+    this.showInputError("parking");
+    this.showFormErrors();
+  };
+
+  // startdateChangeHandler = e => {
+  //   const name = e.target.name;
+  //   this.setState({
+  //     [name]: e.target.value
+  //   });
+  //   this.showInputError("startdate");
+  //   this.showFormErrors();
+  // };
+
+  // enddateChangeHandler = e => {
+  //   const name = e.target.name;
+  //   this.setState({
+  //     [name]: e.target.value
+  //   });
+  //   this.showInputError("enddate");
+  //   this.showFormErrors();
+  // };
 
   bathroomsChangeHandler = e => {
     const name = e.target.name;
@@ -288,16 +335,19 @@ class ListYourProperty extends Component {
       !this.showInputError("propdesc") ||
       !this.showInputError("rooms") ||
       !this.showInputError("bathrooms") ||
-      !this.showInputError("bathrooms")
+      !this.showInputError("sqft") ||
+      !this.showInputError("yearbuilt") ||
+      !this.showInputError("parking")
     ) {
       this.setState({ isDetailsComplete: false });
     } else this.setState({ isDetailsComplete: true });
 
     if (
-      !this.showInputError("startdate") ||
-      !this.showInputError("enddate") ||
-      !this.showInputError("nbr") ||
-      !this.showInputError("minstay")
+      //!this.showInputError("startdate") ||
+      // !this.showInputError("enddate") ||
+      //!this.showInputError("nbr") ||
+      !this.showInputError("pricing")
+      //!this.showInputError("minstay")
     ) {
       this.setState({ isPricingComplete: false });
     } else this.setState({ isPricingComplete: true });
@@ -333,12 +383,12 @@ class ListYourProperty extends Component {
     var headers = new Headers();
     //prevent page from refresh
     e.preventDefault();
-    var apa;
-    if (document.getElementById("apano").checked) {
-      apa = "no";
-    } else if (document.getElementById("apayes").checked) {
-      apa = "yes";
-    }
+    // var apa;
+    // if (document.getElementById("apano").checked) {
+    //   apa = "no";
+    // } else if (document.getElementById("apayes").checked) {
+    //   apa = "yes";
+    // }
     var cf;
     if (this.state.cf == "") cf = 0;
     else cf = this.state.cf;
@@ -356,13 +406,17 @@ class ListYourProperty extends Component {
       proptype: this.state.proptype,
       rooms: this.state.rooms,
       bathrooms: this.state.bathrooms,
-      accomodates: this.state.accomodates,
-      startdate: this.state.startdate,
-      enddate: this.state.enddate,
-      nbr: this.state.nbr,
-      minstay: this.state.minstay,
-      cf: cf,
-      apa: apa,
+      //accomodates: this.state.accomodates,
+      sqft: this.state.sqft,
+      yearbuilt: this.state.yearbuilt,
+      parking: this.state.parking,
+      price: this.state.pricing,
+      // startdate: this.state.startdate,
+      // enddate: this.state.enddate,
+      //nbr: this.state.nbr,
+      // minstay: this.state.minstay,
+      //cf: cf,
+      //apa: apa,
       fname: this.state.fname,
       lname: this.state.lname
     };
@@ -417,32 +471,32 @@ class ListYourProperty extends Component {
       document.body.style.backgroundColor = "rgb(242,242,242)";
       navLogin = (
         <form novalidate>
-          <div class="header-bce bluefont">
+          <div class="header-bce-home_New bluefont-home">
             <div id="hal-home" class="navbar-brand bluefont-home">
               <a href="/home" class="bluefont-home">
-                HomeAway
+                Bloquity
                 <span class="sup">&reg;</span>
               </a>
             </div>
           </div>
-          <div class="wrappernav-pro bluefont">
+          <div class="wrappernav-pro bluefont-home">
             <link
               href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
               rel="stylesheet"
             />
-            <link
+            {/* <link
               href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css"
               rel="stylesheet"
-            />
+            /> */}
             <a href="#" class="flag-icon-background flag-icon-us flag inline">
               {"   "}
             </a>
-            <a href="#" class="tb bluefont inline">
+            {/* <a href="#" class="tb bluefont inline">
               Trip Boards
-            </a>
+            </a> */}
             <div class="btn-group inline dropdownnav">
               <div
-                class="btn-home inline bluefont"
+                class="btn-home inline bluefont-home"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -453,7 +507,7 @@ class ListYourProperty extends Component {
                 <span class="glyphicon glyphicon-triangle-bottom smallicon" />
               </div>
               <ul class="dropdown-menu dropdown-menu-right bluefont">
-                <li>
+                {/* <li>
                   {" "}
                   <a class="dropdown-item bluefont" href="/inbox">
                     <p class="bluefont">
@@ -462,7 +516,7 @@ class ListYourProperty extends Component {
                       Inbox
                     </p>
                   </a>
-                </li>
+                </li> */}
                 <br />
                 <li>
                   <a class="dropdown-item" href="/dashboard">
@@ -484,14 +538,14 @@ class ListYourProperty extends Component {
                   </a>
                 </li>
                 <br />
-                <li>
+                {/* <li>
                   <a class="dropdown-item" href="#">
                     <p class="bluefont">
                       <span class="glyphicon glyphicon-cog dropdownicons" />
                       {"   "} Account
                     </p>
                   </a>
-                </li>
+                </li> */}
 
                 <li role="separator" class="divider dropdownicons" />
 
@@ -510,7 +564,7 @@ class ListYourProperty extends Component {
                 </li>
               </ul>
             </div>
-            <a href="/inbox" class="bluefont">
+            {/* <a href="/inbox" class="bluefont">
               <span
                 class="glyphicon-glyphicon-envelope envelope inline bluefont"
                 aria-hidden="true"
@@ -519,11 +573,11 @@ class ListYourProperty extends Component {
                   {"  "}
                 </i>
               </span>
-            </a>
+            </a> */}
 
-            <div class="btn-group userdd bluefont inline dropdownnav">
+            {/* <div class="btn-group userdd bluefont inline dropdownnav">
               <div
-                class="btn-home inline bluefont"
+                class="btn-home inline bluefont-home"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -531,7 +585,7 @@ class ListYourProperty extends Component {
                 Help{" "}
                 <span class="glyphicon glyphicon-triangle-bottom smallicon" />
               </div>
-              <ul class="dropdown-menu dropdown-menu-right bluefont">
+              <ul class="dropdown-menu dropdown-menu-right bluefont-home">
                 <li>
                   {" "}
                   <a class="dropdown-item " href="#">
@@ -625,13 +679,13 @@ class ListYourProperty extends Component {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <button class="buttonlyp default bluefont inline">
               List your property
             </button>
-            <div class="homeawayimg-pro inline">
+            {/* <div class="homeawayimg-pro inline">
               <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.10.6/bce/moniker/homeaway_us/birdhouse-bceheader.svg" />
-            </div>
+            </div> */}
           </div>
           <div class="lypstuff">
             <link
@@ -644,33 +698,12 @@ class ListYourProperty extends Component {
               {" "}
               {/*Navs*/}
               <ul class="nav">
-                <li>
+                {/* <li>
                   <a class="tabitem" href="#welcome" data-toggle="tab">
                     <p class="tabitem welcome"> Welcome</p>
                   </a>
-                </li>
-                <li>
-                  <a class="tabitem" href="#location" data-toggle="tab">
-                    <p class="tabitem">
-                      {" "}
-                      {this.state.isLocationComplete ? (
-                        <i class="fa fa-check-circle checkpt" />
-                      ) : null}
-                      Location
-                    </p>
-                  </a>
-                </li>
-                <li>
-                  <a class="tabitem" href="#details" data-toggle="tab">
-                    <p class="tabitem">
-                      {" "}
-                      {this.state.isDetailsComplete ? (
-                        <i class="fa fa-check-circle checkpt" />
-                      ) : null}{" "}
-                      Details
-                    </p>
-                  </a>
-                </li>
+                </li> */}
+                {/* ADDING PROPERTY REQS */}
                 <li>
                   <a class="tabitem" href="#photos" data-toggle="tab">
                     <p class="tabitem">
@@ -683,6 +716,39 @@ class ListYourProperty extends Component {
                   </a>
                 </li>
                 <li>
+                  <a class="tabitem" href="#location" data-toggle="tab">
+                    <p class="tabitem">
+                      {" "}
+                      {this.state.isLocationComplete ? (
+                        <i class="fa fa-check-circle checkpt" />
+                      ) : null}
+                      Location Details
+                    </p>
+                  </a>
+                </li>
+                <li>
+                  <a class="tabitem" href="#details" data-toggle="tab">
+                    <p class="tabitem">
+                      {" "}
+                      {this.state.isDetailsComplete ? (
+                        <i class="fa fa-check-circle checkpt" />
+                      ) : null}{" "}
+                      Property Details
+                    </p>
+                  </a>
+                </li>
+                {/* <li>
+                  <a class="tabitem" href="#photos" data-toggle="tab">
+                    <p class="tabitem">
+                      {" "}
+                      {this.state.isPhotosComplete ? (
+                        <i class="fa fa-check-circle checkpt" />
+                      ) : null}
+                      Photos
+                    </p>
+                  </a>
+                </li> */}
+                {/* <li>
                   <a class="tabitem" href="#pricing" data-toggle="tab">
                     <p class="tabitem">
                       {" "}
@@ -692,14 +758,14 @@ class ListYourProperty extends Component {
                       Pricing
                     </p>
                   </a>
-                </li>{" "}
+                </li>{" "} */}
                 {!this.state.propertyadded ? (
                   <p class="pa">Property Added!</p>
                 ) : null}
-                {this.state.isPricingComplete &&
+                {//this.state.isPricingComplete &&
                 this.state.isLocationComplete &&
-                this.state.isPhotosComplete &&
                 this.state.isDetailsComplete &&
+                this.state.isPhotosComplete &&
                 this.state.propertyadded ? (
                   <li>
                     <button
@@ -716,19 +782,15 @@ class ListYourProperty extends Component {
             <div class="lypforms card">
               <div class="tab-content">
                 <div class="tab-pane active" id="welcome">
-                  <h2>
-                    Welcome! Start adding your property
-                    <br />
-                    details here
-                  </h2>
-                  <p class="grayie"> Just 4 simple steps.</p>
+                  {<h2>POST YOUR PROPERTY HERE!</h2>}
+                  {/* <p class="grayie"> Just 4 simple steps.</p> */}
                   {/* <a class="lypcont" href="#location" data-toggle="tab">
                     Continue
                   </a> */}
                 </div>
                 {/*--------------------------------LOCATION---------------------------------------*/}
                 <div class="tab-pane" id="location">
-                  <h4 class="h4v">Verify the location of your rental</h4>
+                  <h4 class="h4v">Enter Your Location Details</h4>
                   <hr class="hrlyp" />
                   <div class="locationinfo">
                     <div class="form-group">
@@ -780,8 +842,7 @@ class ListYourProperty extends Component {
                         class="borderbox locationitem "
                         name="unit"
                         ref="unit"
-                        required
-                        placeholder="Unit, Suite, Building, Etc."
+                        placeholder="Unit, Suite, Building, Etc. (Optional)"
                       />
 
                       <div className="error" id="unitError" />
@@ -840,16 +901,16 @@ class ListYourProperty extends Component {
                     </div>
                   </div>
                 </div>
-                {/*---------------------------------DESC PROPERTY--------------------------------*/}
+                {/*---------------------------------Property DETAILS--------------------------------*/}
                 <div class="tab-pane" id="details">
-                  <h4 class="h4v">Describe your property</h4>
+                  <h4 class="h4v">Enter Your Property Details</h4>
                   <hr class="hrlyp" />
-                  <p class="grayie">
+                  {/* <p class="grayie">
                     {" "}
                     Start out with a descriptive headline and a detailed summary
                     of your property.
-                  </p>
-                  <br />
+                  </p> */}
+
                   <div class="detailsinfo">
                     <div class="form-group">
                       <label id="headlineLabel" hidden>
@@ -911,12 +972,12 @@ class ListYourProperty extends Component {
                           <option value="Bed and Breakfast">
                             Bed and Breakfast
                           </option>
-                          <option value="Boat">Boat</option>
+                          {/* <option value="Boat">Boat</option> */}
                           <option value="Bungalow">Bungalow</option>
-                          <option value="Cabin">Cabin</option>
+                          {/* <option value="Cabin">Cabin</option>
                           <option value="Campground">Campground</option>
                           <option value="Castle">Castle</option>
-                          <option value="Chalet">Chalet</option>
+                          <option value="Chalet">Chalet</option> */}
                           <option value="Chateau / Country House">
                             Chateau / Country House
                           </option>
@@ -924,24 +985,24 @@ class ListYourProperty extends Component {
                           <option value="Corporate Apartment">
                             Corporate Apartment
                           </option>
-                          <option value="Cottage">Cottage</option>
+                          {/* <option value="Cottage">Cottage</option> */}
                           <option value="estate">Estate</option>
-                          <option value="Farmhouse">Farmhouse</option>
-                          <option value="Guest House">Guest House</option>
-                          <option value="Hostel">Hostel</option>
+                          {/* <option value="Farmhouse">Farmhouse</option>
+                          <option value="Guest House">Guest House</option> */}
+                          {/* <option value="Hostel">Hostel</option> */}
                           <option value="Hotel">Hotel</option>
-                          <option value="Hotel Suites">Hotel Suites</option>
+                          {/* <option value="Hotel Suites">Hotel Suites</option> */}
                           <option value="House">House</option>
-                          <option value="House Boat">House Boat</option>
+                          {/* <option value="House Boat">House Boat</option>
                           <option value="Lodge">Lodge</option>
-                          <option value="Mill">Mill</option>
+                          <option value="Mill">Mill</option> */}
                           <option value="Mobile Home">Mobile Home</option>
-                          <option value="Recreational Vehicle">
+                          {/* <option value="Recreational Vehicle">
                             Recreational Vehicle
                           </option>
-                          <option value="Resort">Resort</option>
+                          <option value="Resort">Resort</option> */}
                           <option value="Studio">Studio</option>
-                          <option value="Tower">Tower</option>
+                          {/* <option value="Tower">Tower</option> */}
                           <option value="Town Home">Town Home</option>
                           <option value="Villa">Villa</option>
                           <option value="Yacht">Yacht</option>
@@ -969,24 +1030,6 @@ class ListYourProperty extends Component {
                     </div>
                     <br />
                     <div class="form-group borderbox detailsitem2">
-                      <label id="accomodatesLabel">Accomodates</label>
-                      <input
-                        id="rooms"
-                        value={this.state.accomodates}
-                        onChange={this.accomodatesChangeHandler}
-                        type="number"
-                        step="1"
-                        name="accomodates"
-                        ref="accomodates"
-                        class="detailsitemstep"
-                        placeholder="0"
-                        required
-                        min="1"
-                      />
-                      <div className="error" id="accomodatesError" />
-                    </div>
-                    <br />
-                    <div class="form-group borderbox detailsitem2">
                       <label id="bathroomsLabel">Bathrooms</label>
                       <input
                         id="bathrooms"
@@ -1004,13 +1047,85 @@ class ListYourProperty extends Component {
                       <div className="error" id="bathroomsError" />
                     </div>
                     <br />
+                    <div class="form-group borderbox detailsitem2">
+                      <label id="sqftLabel">Sqft of Lot</label>
+                      <input
+                        id="rooms"
+                        value={this.state.sqft}
+                        onChange={this.sqftChangeHandler}
+                        type="number"
+                        step="1"
+                        name="sqft"
+                        ref="sqft"
+                        class="detailsitemstep"
+                        placeholder="0"
+                        required
+                        min="1"
+                      />
+                      <div className="error" id="sqftError" />
+                    </div>
+                    <br />
+                    <div class="form-group borderbox detailsitem2">
+                      <label id="yearbuiltLabel">Year Built</label>
+                      <input
+                        id="rooms"
+                        value={this.state.yearbuilt}
+                        onChange={this.yearBuiltChangeHandler}
+                        type="number"
+                        step="1"
+                        name="yearbuilt"
+                        ref="yearbuilt"
+                        class="detailsitemstep"
+                        placeholder="0"
+                        required
+                        min="1"
+                      />
+                      <div className="error" id="yearbuiltError" />
+                    </div>
+                    <br />
+                    <div class="form-group borderbox detailsitem2">
+                      <label id="pricingLabel">Price of Property ($)</label>
+
+                      <input
+                        id="rooms"
+                        value={this.state.pricing}
+                        onChange={this.pricingChangeHandler}
+                        type="number"
+                        step="1"
+                        name="pricing"
+                        ref="pricing"
+                        class="detailsitemstep"
+                        placeholder="0"
+                        required
+                        min="1"
+                      />
+                      <div className="error" id="pricingError" />
+                    </div>
+                    <br />
+                    <div class="form-group borderbox detailsitem2">
+                      <label id="parkingLabel">Parking Spots</label>
+                      <input
+                        id="rooms"
+                        value={this.state.parking}
+                        onChange={this.parkingChangeHandler}
+                        type="number"
+                        step="1"
+                        name="parking"
+                        ref="parking"
+                        class="detailsitemstep"
+                        placeholder="0"
+                        required
+                        min="1"
+                      />
+                      <div className="error" id="parkingError" />
+                    </div>
                     <hr />
                     <br />
                   </div>
                 </div>
                 {/*---------------------------------PHOTOS--------------------------------*/}
                 <div class="tab-pane" id="photos">
-                  <h1>Add up to 5 photos of your property</h1>
+                  <h1> Add up to 5 photos of your property </h1>
                   <hr />
                   Showcase your property’s best features (no pets or people,
                   please).
@@ -1069,14 +1184,14 @@ class ListYourProperty extends Component {
                 {/*---------------------------------PRICING--------------------------------*/}
                 <div class="tab-pane" id="pricing">
                   <div>
-                    <h4 class="h4v">Availability</h4> <hr class="hrlyp" />
-                    <p class="grayie">
+                    {/* <h4 class="h4v">Availability</h4> <hr class="hrlyp" /> */}
+                    {/* <p class="grayie">
                       Select a starting and ending point for setting up your
                       availability
-                    </p>
-                    <br />
+                    </p> */}
+                    {/* <br /> */}
                     <div>
-                      <div class="form-group borderbox detailsitem2 inlinedate">
+                      {/* <div class="form-group borderbox detailsitem2 inlinedate">
                         <label id="startdateLabel">Start Date</label>
                         <input
                           id="bathrooms"
@@ -1090,8 +1205,8 @@ class ListYourProperty extends Component {
                           min={today}
                         />
                         <div className="error" id="startdateError" />
-                      </div>
-                      <div class="form-group borderbox detailsitem2 inlinedate">
+                      </div> */}
+                      {/* <div class="form-group borderbox detailsitem2 inlinedate">
                         <label id="enddateLabel">End Date</label>
                         <input
                           id="bathrooms"
@@ -1101,34 +1216,34 @@ class ListYourProperty extends Component {
                           name="enddate"
                           ref="enddate"
                           class="detailsitemstep"
-                          required
-                          min={this.state.startdate}
+                          // required
+                          // min={this.state.startdate}
                         />
                         <div className="error" id="enddateError" />
-                      </div>
+                      </div> */}
                     </div>
+                    {/* <br />
                     <br />
-                    <br />
-                    <br />
+                    <br /> */}
                   </div>
                   <div>
                     {" "}
                     <br /> <br />{" "}
-                    <h4 class="h4v">How much do you want to charge?</h4>{" "}
+                    <h4 class="h4v">Enter Price of Your Property</h4>{" "}
                     <hr class="hrlyp" />
-                    <p class="grayie">
+                    {/* <p class="grayie">
                       We recommend starting with a low price to get a few
                       bookings and earn some initial guest reviews. You can
                       update your rates at any time.
-                    </p>
+                    </p> */}
                     <div>
                       <div>
                         <br />{" "}
-                        <label id="nbrLabel" class="nbrLabel inlinedate">
+                        {/* <label id="nbrLabel" class="nbrLabel inlinedate">
                           {" "}
                           Nightly Base Rate{" "}
-                        </label>
-                        <div class="form-group borderbox detailsitem2 inlinedate">
+                        </label> */}
+                        {/* <div class="form-group borderbox detailsitem2 inlinedate">
                           <label id="nbr2Label">$</label>
                           <input
                             id="nbr"
@@ -1138,22 +1253,43 @@ class ListYourProperty extends Component {
                             name="nbr"
                             ref="nbr"
                             class="detailsitemstep"
-                            required
                             min="1"
                           />
                           <div className="error" id="nbrError" />
                           <br />
-                        </div>
+                        </div> */}
                       </div>
                       <br />
                       <br />
-
-                      <label id="minstayLabel" class="minstayLabel inlinedate">
+                      <br /> {/* pricing */}
+                      {/* <label id="pricingLabel" class="pricingLabel inlinedate">
+                        {" "}
+                        Property Price{" "}
+                      </label>
+                      <div class="form-group borderbox detailsitem inlinedate">
+                        <label id="pricing2Label">$</label>
+                        <input
+                          id="pricing"
+                          value={this.state.pricing}
+                          onChange={this.pricingChangeHandler}
+                          type="number"
+                          //step="1"
+                          name="pricing"
+                          ref="pricing"
+                          class="detailsitemstep"
+                          required
+                          min="1"
+                        />
+                        <div className="error" id="pricingError" />
+                      </div> */}
+                      <br />
+                      <br />
+                      {/* <label id="minstayLabel" class="minstayLabel inlinedate">
                         <br />
                         Minimum Stay{" "}
-                      </label>
-                      <div class="form-group borderbox detailsitem3">
-                        <label id="minstay2Label">nights</label>
+                      </label> */}
+                      {/* <div class="form-group borderbox detailsitem3">
+                        <label id="minstay2Label">$</label>
                         <input
                           id="minstay"
                           value={this.state.minstay}
@@ -1163,17 +1299,14 @@ class ListYourProperty extends Component {
                           name="minstay"
                           ref="minstay"
                           class="detailsitemstep3"
-                          required
                           min="1"
                         />
                         <div className="error" id="minstayError" />
-                      </div>
-                      <br />
-
+                      </div> */}
                       <br />
                     </div>
                   </div>
-                  <div>
+                  {/* <div>
                     {" "}
                     <br /> <br /> <h4 class="h4v">Fees</h4> <hr class="hrlyp" />
                     <p class="grayie">
@@ -1241,7 +1374,7 @@ class ListYourProperty extends Component {
                       <br />
                       <br />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

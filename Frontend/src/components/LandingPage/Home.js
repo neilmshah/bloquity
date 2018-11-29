@@ -15,6 +15,9 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      zip: "",
+      state: "",
+      city: "",
       startdate: "",
       where: "",
       guests: "",
@@ -30,10 +33,15 @@ class Home extends Component {
     this.handleArriveChange = this.handleArriveChange.bind(this);
     this.handleDepartChange = this.handleDepartChange.bind(this);
     this.handleWhereChange = this.handleWhereChange.bind(this);
+    this.handleZipChange = this.handleZipChange.bind(this); //zip
+    this.handleCityChange = this.handleCityChange.bind(this); //city
+    this.handleStateChange = this.handleStateChange.bind(this); //state
     this.handleGuestsChange = this.handleGuestsChange.bind(this);
     this.startSearch = this.startSearch.bind(this);
   }
   componentDidMount() {
+    document.title = "Bloquity";
+
     console.log("TOKEN HOME:", localStorage.getItem("token"));
     if (localStorage.getItem("token")) {
       axios.defaults.headers.common["Authorization"] = token;
@@ -72,6 +80,24 @@ class Home extends Component {
     });
   };
 
+  handleZipChange = e => {
+    this.setState({
+      zip: e.target.value
+    });
+  };
+
+  handleCityChange = e => {
+    this.setState({
+      city: e.target.value
+    });
+  };
+
+  handleStateChange = e => {
+    this.setState({
+      state: e.target.value
+    });
+  };
+
   handleGuestsChange = e => {
     this.setState({
       guests: e.target.value
@@ -90,22 +116,22 @@ class Home extends Component {
   };
 
   render() {
-    var sdate = new Date(this.state.startdate);
-    var year = sdate.getFullYear();
-    var month = ("0" + (sdate.getMonth() + 1)).slice(-2);
-    var day = ("0" + sdate.getDate()).slice(-2);
-    var sd = `${year}-${month}-${day}`;
+    // var sdate = new Date(this.state.startdate);
+    // var year = sdate.getFullYear();
+    // var month = ("0" + (sdate.getMonth() + 1)).slice(-2);
+    // var day = ("0" + sdate.getDate()).slice(-2);
+    // var sd = `${year}-${month}-${day}`;
 
-    var edate = new Date(this.state.enddate);
-    var year = edate.getFullYear();
-    var month = ("0" + (edate.getMonth() + 1)).slice(-2);
-    var day = ("0" + edate.getDate()).slice(-2);
-    var ed = `${year}-${month}-${day}`;
+    // var edate = new Date(this.state.enddate);
+    // var year = edate.getFullYear();
+    // var month = ("0" + (edate.getMonth() + 1)).slice(-2);
+    // var day = ("0" + edate.getDate()).slice(-2);
+    // var ed = `${year}-${month}-${day}`;
 
     // const newTo = {
-    //   pathname: `/home/search?=${this.state.where}/${sd}/${ed}/${
-    //     this.state.guests
-    //   }`
+    // pathname: `/home/search?=${this.state.where}/${sd}/${ed}/${
+    // this.state.guests
+    // }`
     // };
     //if Cookie is set render Logout Button
     let navLogin = null;
@@ -122,10 +148,11 @@ class Home extends Component {
             href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css"
             rel="stylesheet"
           />
-          <a href="#" class="flag-icon-background flag-icon-us flag inline">
-            {"   "}
-          </a>
-        
+
+          <button class="buttonlyp default bluefont inline">About Us</button>
+
+          <button class="buttonlyp default bluefont inline">Contact</button>
+
           <div class="btn-group inline dropdownnav">
             <div
               class="btn-home inline bluefont-home"
@@ -133,28 +160,26 @@ class Home extends Component {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <img src={this.state.profileicon} class="smallimg" />
-              {"   "}
+              <img src={this.state.profileicon} class="smallimg" />{" "}
               {this.props.fname} {String(this.props.lname).charAt(0) + "."}{" "}
               <span class="glyphicon glyphicon-triangle-bottom smallicon" />
             </div>
             <ul class="dropdown-menu dropdown-menu-right bluefont">
-              <li>
-                {" "}
-                <a class="dropdown-item bluefont" href="/inbox">
-                  <p class="bluefont">
-                    <span class=" glyphicon glyphicon-envelope dropdownicons bluefont" />
-                    {"   "}
-                    Inbox
-                  </p>
-                </a>
-              </li>
-              <br />
+              {/* <li>
+ {" "}
+ <a class="dropdown-item bluefont" href="/inbox">
+ <p class="bluefont">
+ <span class=" glyphicon glyphicon-envelope dropdownicons bluefont" />
+ {" "}
+ Inbox
+ </p>
+ </a>
+ </li> */}
+              {/* <br /> */}
               <li>
                 <a class="dropdown-item" href="/dashboard">
                   <p class="bluefont">
                     <span class="glyphicon glyphicon-briefcase dropdownicons" />{" "}
-                    {"   "}
                     Dashboard
                   </p>
                 </a>
@@ -181,9 +206,8 @@ class Home extends Component {
                   class="dropdown-item"
                 >
                   <p class="bluefont">
-                    <span class="glyphicon glyphicon-user dropdownicons" />
-                    {"   "}
-                    My Profile
+                    <span class="glyphicon glyphicon-user dropdownicons" /> My
+                    Profile
                   </p>
                 </Link>
               </li>
@@ -191,8 +215,8 @@ class Home extends Component {
               <li>
                 <a class="dropdown-item" href="#">
                   <p class="bluefont">
-                    <span class="glyphicon glyphicon-cog dropdownicons" />
-                    {"   "} Account
+                    <span class="glyphicon glyphicon-cog dropdownicons" />{" "}
+                    Account
                   </p>
                 </a>
               </li>
@@ -206,24 +230,12 @@ class Home extends Component {
                 >
                   <p class="bluefont">
                     <span class="glyphicon glyphicon-log-out dropdownicons" />{" "}
-                    {"   "}
                     Logout
                   </p>
                 </a>
               </li>
             </ul>
           </div>
-          <a href="/inbox" class="bluefont-home">
-            <span
-              class="glyphicon-glyphicon-envelope envelope inline bluefont-home"
-              aria-hidden="true"
-            >
-              <i class="fa fa-envelope bluefont-home " aria-hidden="true">
-                {"  "}
-              </i>
-            </span>
-          </a>
-
 
           <a
             href={
@@ -231,11 +243,11 @@ class Home extends Component {
             }
             class="buttonlyp default bluefont inline"
           >
-            List your property
+            Post your property
           </a>
-          <div class="homeawayimg-home inline">
-            <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.11.0/bce/moniker/homeaway_us/birdhouse-bceheader-white.svg" />
-          </div>
+          {/* <div class="homeawayimg-home inline">
+ <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.11.0/bce/moniker/homeaway_us/birdhouse-bceheader-white.svg" />
+ </div> */}
         </div>
       );
     } else {
@@ -250,18 +262,19 @@ class Home extends Component {
             href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css"
             rel="stylesheet"
           />
-          <a href="#" class="flag-icon-background flag-icon-us flag inline">
-            {"   "}
-          </a>
-         
+
+          <button class="buttonlyp default bluefont inline">About Us</button>
+
+          <button class="buttonlyp default bluefont inline">Contact</button>
+
           <div class="btn-group inline dropdownnav">
             <div
-              class=" btn-home inline  bluefont-home"
+              class=" btn-home inline bluefont-home"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
             >
-              {"   "}
+              {" "}
               Login{" "}
               <span class="glyphicon glyphicon-triangle-bottom smallicon" />
             </div>
@@ -280,13 +293,9 @@ class Home extends Component {
             </ul>
           </div>
 
-            
-          <button class="buttonlyp default bluefont inline">
-            List your property
-          </button>
-          <div class="homeawayimg-home inline">
-            <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.11.0/bce/moniker/homeaway_us/birdhouse-bceheader-white.svg" />
-          </div>
+          {/* <div class="homeawayimg-home inline">
+ <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.11.0/bce/moniker/homeaway_us/birdhouse-bceheader-white.svg" />
+ </div> */}
         </div>
       );
     }
@@ -297,97 +306,77 @@ class Home extends Component {
         {/* {redirectVar} */}
 
         <div class="homebg">
-          <div class="header-bce-home bluefont-home">
+          <div class="header-bce-home_New bluefont-home">
             <div id="hal-home" class="navbar-brand bluefont-home">
               <a href="/home" class="bluefont-home">
-                HomeAway
+                Bloquity
                 <span class="sup">&reg;</span>
               </a>
             </div>
             <div class="" />
-            <div class="homesearch">
-              <h1 class="HeadLine">
-                <span class="HeadLine__text">Book beach houses, cabins,</span>
-                <span class="HeadLine__text">condos and more, worldwide</span>
+            <div class="homesearch flex-container_New2">
+              <h1 class="HeadLine_New ">
+                <span class="HeadLine__text">Securely Find Your</span>
+                <span class="HeadLine__text">Next Property</span>
               </h1>
-              <div class="flex-container">
+              <div class="flex-container_New">
                 <div class="inner-addon left-addon">
                   <i class="glyphicon glyphicon-map-marker" />
                   <input
                     type="search"
-                    class="searchfields largesearch"
-                    placeholder=" Where do you want to go?"
-                    value={this.state.where}
-                    onChange={this.handleWhereChange}
+                    class="searchfields mediumsearch"
+                    placeholder="Zip Code"
+                    value={this.state.zip}
+                    onChange={this.handleZipChange}
                   />
                 </div>
-
+                <h1 class="HeadLine_New2">
+                  <span class="HeadLine__text">OR</span>
+                </h1>
                 <div class="inner-addon left-addon">
-                  <div id="gly">
-                    <i class="glyphicon glyphicon-calendar" />{" "}
-                  </div>
-                  <div>
-                    <DatePicker
-                      className="searchfields smallsearch datepickercss"
-                      placeholderText=" Arrive"
-                      selected={this.state.startdate}
-                      onChange={this.handleArriveChange}
-                      minDate={moment()}
-                    />
-                  </div>
-                </div>
-
-                <div class="inner-addon left-addon">
-                  <div id="gly2">
-                    <i class="glyphicon glyphicon-calendar" />{" "}
-                  </div>
-                  <div>
-                    <DatePicker
-                      className="searchfields smallsearch datepickercss"
-                      placeholderText=" Depart"
-                      selected={this.state.enddate}
-                      onChange={this.handleDepartChange}
-                      minDate={this.state.startdate}
-                    />
-                  </div>
-                </div>
-                <div class="inner-addon left-addon">
-                  <i class="glyphicon glyphicon-user" />{" "}
+                  <i class="glyphicon glyphicon-map-marker" />
                   <input
-                    type="number"
-                    class="searchfields smallsearch"
-                    placeholder=" Guests"
-                    value={this.state.guests}
-                    onChange={this.handleGuestsChange}
-                    step="1"
-                    min="1"
+                    type="search"
+                    class="searchfields mediumsearch"
+                    placeholder="City"
+                    value={this.state.city}
+                    onChange={this.handleCityChange}
                   />
                 </div>
-
+                <h1 class="HeadLine_New2">
+                  <span class="HeadLine__text">OR</span>
+                </h1>
+                <div class="inner-addon left-addon">
+                  <i class="glyphicon glyphicon-map-marker" />{" "}
+                  <input
+                    type="search"
+                    class="searchfields mediumsearch"
+                    placeholder="State"
+                    value={this.state.state}
+                    onChange={this.handleStateChange}
+                  />
+                </div>{" "}
                 <Link
                   to={{
                     pathname: "/searchresults",
                     state: {
-                      where: this.state.where,
-                      startdate: sd,
-                      enddate: ed,
-                      guests: this.state.guests,
+                      zip: this.state.zip,
+                      city: this.state.city,
+                      state: this.state.state,
                       fname: this.props.fname,
                       lname: this.props.lname
                     }
                   }}
-                  className="searchfields smallsearch homesearchbutton"
+                  className="searchfields_New smallsearch homesearchbutton_New"
                 >
                   <p class="srch">Search</p>
                 </Link>
               </div>
-              
             </div>
           </div>
         </div>
         {/* ----------------CAROUSEL------------------*/}
 
-        
         {navLogin}
       </div>
     );
@@ -431,7 +420,7 @@ const mapDispatchStateToProps = dispatch => {
             statusCode: response.status
           });
           //update the state with the response data
-          console.log("Data  HOME: ", response.data);
+          console.log("Data HOME: ", response.data);
         });
     }
   };

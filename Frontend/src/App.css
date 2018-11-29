@@ -323,12 +323,12 @@ $button-active-blue: #1669f2; */
 }
 
 .header-lyp {
-  background: #fff;
+  background: rgba(38, 52, 175, 0.726);
   border-bottom: 1px solid #dbdbdba8;
   border-top: 0;
   position: relative;
   width: 100%;
-  height: 4vw;
+  height: 80px;
 }
 
 .header-bce-home {
@@ -339,6 +339,13 @@ $button-active-blue: #1669f2; */
   height: 80px;
 }
 
+.header-bce-home_New {
+  background: rgb(38, 52, 175);
+  border-top: 0;
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
 .logo {
   display: inline-block;
   vertical-align: top;
@@ -346,7 +353,7 @@ $button-active-blue: #1669f2; */
 }
 
 .bluefont {
-  color: #2a6ebb;
+  color: #0e3b6e;
   text-decoration: none;
 }
 
@@ -536,6 +543,27 @@ div.wrappernav-home-nli {
   text-decoration: none;
 }
 
+.buttonlyp_New {
+  border: 1px solid rgb(196, 195, 195);
+  background-color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.buttonlyp_New:hover,
+.buttonlyp_New:active,
+.buttonlyp_New:focus,
+.buttonlyp_New:visited {
+  border: 1px solid #2a6ebb;
+  background-color: white;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 40px;
+  text-decoration: none;
+}
+
 .dropdownnav {
   position: relative;
   padding: 0;
@@ -578,7 +606,7 @@ div.wrappernav-home-nli {
   display: block;
   position: absolute;
   background: linear-gradient(rgba(0, 0, 0, 0.315), rgba(0, 0, 0, 0)),
-    url(http://csvcus.homeaway.com/rsrcs/stab-cms-resources/0.10.30/images/homepage/jumbotron/ptaHpNextHeroImage/large.jpg);
+    url(http://www.hdnicewallpapers.com/Walls/Big/Countries%20and%20City/Empire_State_Building_Skyscraper_in_New_York_City_USA_HD_Wallpaper.jpg);
 
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -615,6 +643,41 @@ div.wrappernav-home-nli {
   -ms-user-select: none;
   user-select: none;
 }
+
+.HeadLine_New {
+  position: relative;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  bottom: -2.5vw;
+  color: #d4d4d4;
+  font-size: 2vw;
+  font-weight: 650;
+  letter-spacing: 0.01vw;
+  text-align: center;
+  line-height: normal;
+  margin: 0 1vw 1vw;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.HeadLine_New2 {
+  position: relative;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  bottom: -0.75vw;
+  color: #d4d4d4;
+  font-size: 1.4vw;
+  font-weight: 600;
+  letter-spacing: 0.01vw;
+  text-align: center;
+  line-height: normal;
+  margin: 0 1vw 1vw;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .HeadLine__text {
   display: block;
 }
@@ -623,6 +686,29 @@ div.wrappernav-home-nli {
   position: relative;
   top: 20.5vw;
   left: 13.2vw;
+}
+
+.flex-container_New {
+  position: relative;
+  border-radius: 8px;
+  bottom: 5vw;
+  left: 1vw;
+  height: 27vw;
+  width: 72.5vw;
+  display: flex;
+  align-items: center;
+}
+
+.flex-container_New2 {
+  position: relative;
+  border-radius: 20px;
+  bottom: 5vw;
+  left: 15vw;
+  height: 18vw;
+  width: 71vw;
+
+  background: rgba(24, 29, 73, 0.89);
+  align-items: center;
 }
 
 .flex-container {
@@ -661,6 +747,18 @@ div.wrappernav-home-nli {
   transition: width 0.5s ease;
   outline: none;
 }
+.searchfields_New {
+  border-radius: 8px;
+  height: 3.8vw;
+  line-height: 1vw;
+  color: rgb(31, 106, 192);
+}
+
+.searchfields_New:focus {
+  color: rgb(31, 106, 192);
+  transition: width 0.5s ease;
+  outline: none;
+}
 
 input::placeholder {
   font-size: 18px;
@@ -685,6 +783,19 @@ input::placeholder {
   color: white;
   line-height: 1vw;
 }
+
+.homesearchbutton_New {
+  position: relative;
+  background-color: #4c5258;
+  font-size: 2vw;
+  font-weight: 900;
+
+  border: none;
+  border-radius: 40px;
+  color: white;
+  line-height: 1vw;
+}
+
 .srch {
   padding-top: 1.5vw;
   padding-left: 3.5vw;
@@ -700,6 +811,9 @@ input::placeholder {
   background-color: #1466c4;
 }
 
+.homesearchbutton_New:hover {
+  background-color: #1a80f3;
+}
 .inner-addon {
   position: relative;
 }
@@ -1071,6 +1185,7 @@ input[type="date"]:focus::after {
 }
 
 .grayie {
+  margin-left: 10vw;
   color: gray;
 }
 
@@ -1499,7 +1614,7 @@ input:checked + .slider:before {
 .savechangesbutton {
   position: absolute;
   margin-top: 1.2vw;
-  background-color: #0067db;
+  background-color: rgb(38, 52, 175);
   font-size: 1.1vw;
   border: none;
   border-radius: 40px;
@@ -1667,6 +1782,34 @@ div.card {
   color: gray;
 }
 
+#sqftLabel {
+  position: relative;
+  left: 1vw;
+  font-weight: 400;
+  color: gray;
+}
+
+#yearbuiltLabel {
+  position: relative;
+  left: 1vw;
+  font-weight: 400;
+  color: gray;
+}
+
+#pricingLabel {
+  position: relative;
+  left: 1vw;
+  font-weight: 400;
+  color: gray;
+}
+
+#parkingLabel {
+  position: relative;
+  left: 1vw;
+  font-weight: 400;
+  color: gray;
+}
+
 #bathroomsLabel {
   position: relative;
   left: 1vw;
@@ -1817,11 +1960,13 @@ div.card {
 .bc2:focus {
   outline: none;
 }
-
+/*
+changed
+*/
 .checkpt {
   position: absolute;
   font-size: 35px;
-  color: rgb(66, 143, 243);
+  color: rgb(38, 52, 175);
   left: -1.5vw;
   bottom: 1vw;
 }
@@ -1911,8 +2056,9 @@ div.card {
   right: -7vw;
 }
 .propinfo {
-  position: absolute;
+  position: static;
   top: 50vw;
+  margin-top: 10vm;
   padding: 5vw;
   width: 75vw;
 }
@@ -1932,6 +2078,7 @@ div.card {
 }
 
 .propdescclass {
+  margin-left: 10vw;
   word-wrap: break-word;
 }
 
