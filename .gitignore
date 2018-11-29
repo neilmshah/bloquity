@@ -2,3 +2,5 @@ node_modules
 Backend/node_modules/
 Frontend/node_modules/
 kafka-backend/node_modules
+Backend/images
+Backend/propertyimages
