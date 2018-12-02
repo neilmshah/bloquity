@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Pagination from "../Pagination/Pagination";
 import paginate from "../../utils/paginate";
+import { ROOT_URL } from "../../actions";
+import { checkTransactionHistory } from "../../actions";
 const token = localStorage.getItem("token");
 const today = new Date().toISOString().slice(0, 10);
 
@@ -17,6 +19,7 @@ class Dashboard extends Component {
     //Call the constrictor of Super class i.e The Component
     super(props);
     //maintain the state required for this component
+
     this.state = {
       fname: "",
       lname: "",
@@ -28,13 +31,20 @@ class Dashboard extends Component {
       currentPage: 1,
       fromfilter: null,
       tofilter: null,
-      searchinput: null
+      searchinput: null,
+      streetaddr:"",
+      unit:"",
+      zip:""
+    
     };
-
     //Bind the handlers to this class
     this.handleLocationSearch = this.handleLocationSearch.bind(this);
     this.handleToFilter = this.handleToFilter.bind(this);
     this.handleFromFilter = this.handleFromFilter.bind(this);
+    this.handleZipChange = this.handleZipChange.bind(this); //zip
+    this.handleUnitChange = this.handleUnitChange.bind(this); //zip
+    this.handleStreetaddrChange = this.handleStreetaddrChange.bind(this); //zip
+
   }
 
   componentDidMount() {
@@ -45,7 +55,7 @@ class Dashboard extends Component {
     if (localStorage.getItem("token")) {
       axios.defaults.headers.common["Authorization"] = token;
       axios
-        .get("http://localhost:3001/photos/profile", {
+        .get(`${ROOT_URL}/photos/profile`, {
           params: {
             email: sessionStorage.getItem("email")
           }
@@ -59,12 +69,16 @@ class Dashboard extends Component {
             profileicon: imagePreview
           });
         });
-      this.props.onGetRender();
+if(this.props.location.state){
+      this.props.getTransactionHistory({streetaddr: this.props.location.state.streetaddr,
+        unit: this.props.location.state.unit,
+        zip: this.props.location.state.zip});
+      }
     }
     if (localStorage.getItem("token")) {
       axios.defaults.headers.common["Authorization"] = token;
       axios
-        .get("http://localhost:3001/home", {
+        .get(`${ROOT_URL}/home`, {
           params: {
             email: sessionStorage.getItem("email")
           }
@@ -79,6 +93,28 @@ class Dashboard extends Component {
         });
     }
   }
+
+  handleZipChange = e => {
+    this.setState({
+      zip: e.target.value
+    });
+  };
+  handleStreetaddrChange = e => {
+    this.setState({
+      streetaddr: e.target.value
+    });
+  };
+   handleUnitChange = e => {
+    this.setState({
+      unit: e.target.value
+    });
+  };
+
+handleDashSearch=()=>{
+  this.props.getTransactionHistory({streetaddr: this.state.streetaddr,
+    unit: this.state.unit,
+    zip: this.state.zip})
+}
 
   handleLogout = () => {
     localStorage.removeItem("token");
@@ -131,22 +167,13 @@ class Dashboard extends Component {
 
     const result = paginate(resultnew, currentPage, pageSize);
     if (sessionStorage.getItem("typeofaccount") == "owner") {
-      tablesdata = result.map(booking => {
+      tablesdata = this.props.result.map(booking => {
         return (
           <tr>
-            <td>{booking.headline}</td>
-            <td>
-              {booking.city.charAt(0).toUpperCase() + booking.city.slice(1)},{" "}
-              {booking.state.charAt(0).toUpperCase() + booking.state.slice(1)},{" "}
-              {booking.country.charAt(0).toUpperCase() +
-                booking.country.slice(1)}
-            </td>
-            <td>{booking.startdate}</td>
-            <td>{booking.enddate}</td>
-            <td>${booking.total}</td>
-            <td>
-              {booking.traveler_fname} {booking.traveler_lname}
-            </td>
+            <td>{booking.buyer}</td>
+            <td>{booking.seller}</td>
+            <td>{booking.trans_date}</td>
+            <td>${booking.trans_amt}</td>
           </tr>
         );
       });
@@ -170,33 +197,29 @@ class Dashboard extends Component {
     }
     if (sessionStorage.getItem("typeofaccount") == "owner") {
       details = (
-        <div>
-          <h2 class="bluefont">
-            {"  "}
-            Your property bookings
+        <div class="tablecss">
+          <h2 class="bluefont h2th">
+            <center>
+            Transaction History
+            <br></br>
+            <br></br>
+            </center>
           </h2>
-          <table class="table">
+          <table class="table tableborder" >
             <thead>
               <tr>
                 <th>
-                  <p class="tableh">Property</p>
+                  <p class="tableh">Buyer</p>
                 </th>
                 <th>
-                  <p class="tableh">Location</p>
+                  <p class="tableh">Seller</p>
                 </th>
                 <th>
-                  <p class="tableh">From</p>
+                  <p class="tableh">Transaction Date</p>
                 </th>
-                <th>
-                  <p class="tableh">To</p>
+                <th class="">
+                  <p class="tableh ta">Transaction Amount</p>
                 </th>
-                <th>
-                  <p class="tableh">Cost</p>
-                </th>
-                <th>
-                  <p class="tableh">Booked by</p>
-                </th>
-
                 <th />
               </tr>
             </thead>
@@ -245,18 +268,18 @@ class Dashboard extends Component {
         </div>
       );
     }
-    if (localStorage.getItem("token")) {
+  
       navLogin = (
         <div>
-          <div class="header-bce bluefont">
+            <div class="header-bce-home_New bluefont-home">
             <div id="hal-home" class="navbar-brand bluefont-home">
               <a href="/home" class="bluefont-home">
-                HomeAway
+                Bloquity
                 <span class="sup">&reg;</span>
               </a>
             </div>
           </div>
-          <div class="wrappernav-pro bluefont">
+          <div class="wrappernav-home-nli">
             <link
               href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
               rel="stylesheet"
@@ -265,15 +288,27 @@ class Dashboard extends Component {
               href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css"
               rel="stylesheet"
             />
-            <a href="#" class="flag-icon-background flag-icon-us flag inline">
+            {/* <a href="#" class="flag-icon-background flag-icon-us flag inline">
               {"   "}
             </a>
             <a href="#" class="tb bluefont inline">
               Trip Boards
+            </a> */}
+
+             <a
+              href={
+                sessionStorage.getItem("typeofaccount") == "owner"
+                  ? "/lyp"
+                  : "#"
+              }
+              class="buttonlyp default bluefont inline"
+            >
+              Post your property
             </a>
+
             <div class="btn-group inline dropdownnav">
               <div
-                class="btn-home inline bluefont"
+                class="btn-home inline bluefont-home"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -286,7 +321,7 @@ class Dashboard extends Component {
                 <span class="glyphicon glyphicon-triangle-bottom smallicon" />
               </div>
               <ul class="dropdown-menu dropdown-menu-right bluefont">
-                <li>
+                {/* <li>
                   {" "}
                   <a class="dropdown-item bluefont" href="/inbox">
                     <p class="bluefont">
@@ -305,7 +340,7 @@ class Dashboard extends Component {
                       My Trips
                     </p>
                   </a>
-                </li>
+                </li> */}
                 <br />
                 <li>
                   <a class="dropdown-item" href="/profile">
@@ -343,7 +378,7 @@ class Dashboard extends Component {
                 </li>
               </ul>
             </div>
-            <a href="/inbox" class="bluefont">
+            {/* <a href="/inbox" class="bluefont">
               <span
                 class="glyphicon-glyphicon-envelope envelope inline bluefont"
                 aria-hidden="true"
@@ -352,11 +387,11 @@ class Dashboard extends Component {
                   {"  "}
                 </i>
               </span>
-            </a>
+            </a> */}
 
             <div class="btn-group userdd bluefont inline dropdownnav">
               <div
-                class="btn-home inline bluefont"
+                class="btn-home inline bluefont-home"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -459,23 +494,14 @@ class Dashboard extends Component {
                 </li>
               </ul>
             </div>
-            <a
-              href={
-                sessionStorage.getItem("typeofaccount") == "owner"
-                  ? "/lyp"
-                  : "#"
-              }
-              class="buttonlyp default bluefont inline"
-            >
-              List your property
-            </a>
+           
             <div class="homeawayimg-pro inline">
-              <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.10.6/bce/moniker/homeaway_us/birdhouse-bceheader.svg" />
+              <img src="https://i.imgur.com/fLTMlTI.png" />
             </div>
           </div>
         </div>
       );
-    } else redirectVar = <Redirect to="/login" />;
+ 
 
     return (
       <div>
@@ -483,31 +509,43 @@ class Dashboard extends Component {
         {navLogin}
         <br />
         <br />
-        <label class="filterlabel">Where</label>
-        <input
-          type="text"
-          id="myInput"
-          value={this.state.searchinput}
-          onChange={this.handleLocationSearch}
-          class="filters"
-          min="0"
-          step="1"
-        />
-        <label class="filterlabel">From</label>
-        <input
-          type="date"
-          id="myInput"
-          onChange={this.handleFromFilter}
-          class="filters"
-        />
-        <label class="filterlabel">To</label>
-        <input
-          type="date"
-          id="myInput"
-          onChange={this.handleToFilter}
-          class="filters"
-        />
         <br />
+        <div>
+        <div class="flex-container_New3">
+                <div class="inner-addon left-addon">
+                  <i class="glyphicon  gapsfi glyphicon-map-marker" />
+                  <input
+                    type="search"
+                    class="searchfields mediumsearch"
+                    placeholder="Street Address"
+                    value={this.state.streetaddr}
+                    onChange={this.handleStreetaddrChange}
+                  />
+                </div>
+                <div class="inner-addon left-addon">
+                  <i class="glyphicon gapsfi glyphicon-map-marker" />
+                  <input
+                    type="search"
+                    class="searchfields mediumsearch"
+                    placeholder="Unit"
+                    value={this.state.unit}
+                    onChange={this.handleUnitChange}
+                  />
+                </div>
+                <div class="inner-addon left-addon">
+                  <i class="glyphicon gapsfi glyphicon-map-marker" />
+                  <input
+                    type="search"
+                    class="searchfields mediumsearch"
+                    placeholder="Zip Code"
+                    value={this.state.zip}
+                    onChange={this.handleZipChange}
+                  />
+                </div>
+                <button class="homesearchbuttondash" onClick={this.handleDashSearch}>
+                Search</button>
+                </div>
+          </div>
         <div>{details}</div>
         <Pagination
           itemsCount={resultnew.length}
@@ -524,32 +562,46 @@ class Dashboard extends Component {
 const mapStateToProps = state => {
   console.log("Statetoprops: ", state.login.result);
   return {
-    result: state.login.result,
-    fname: state.login.fname,
-    lname: state.login.lname
+    //access this as this.props.result
+    result: state.login.result
   };
 };
 
 const mapDispatchStateToProps = dispatch => {
   return {
-    onGetRender: () => {
+    getTransactionHistory: (values) => {
+
       axios.defaults.headers.common["Authorization"] = token;
-      axios
-        .get("http://localhost:3001/dashboard", {
-          params: {
-            email: sessionStorage.getItem("email"),
-            typeofaccount: sessionStorage.getItem("typeofaccount")
-          }
-        })
-        .then(response => {
-          dispatch({
-            type: "DASHBOARD",
-            payload: response.data,
-            statusCode: response.status
-          });
-          //update the state with the response data
-          console.log("Data  : ", response);
-        });
+      const request = axios
+        .get(`${ROOT_URL}/transactionhistory`, {params: values})
+        . then(response => {
+              dispatch({
+                type: "BOOK_PROPERTY",
+                payload: response.data,
+                statusCode: response.status
+              });
+              //update the state with the response data
+              console.log("Data  : ", response);
+            });
+    
+    
+      // axios.defaults.headers.common["Authorization"] = token;
+      // axios
+      //   .get(`${ROOT_URL}/dashboard`, {
+      //     params: {
+      //       email: sessionStorage.getItem("email"),
+      //       typeofaccount: sessionStorage.getItem("typeofaccount")
+      //     }
+      //   })
+      //   .then(response => {
+      //     dispatch({
+      //       type: "DASHBOARD",
+      //       payload: response.data,
+      //       statusCode: response.status
+      //     });
+      //     //update the state with the response data
+      //     console.log("Data  : ", response);
+      //   });
     }
   };
 };

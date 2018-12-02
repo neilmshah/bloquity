@@ -11,7 +11,8 @@ export const ASK_QUESTION = "ask_question";
 
 const token = localStorage.getItem("token");
 
-const ROOT_URL = "http://localhost:3001";
+export const ROOT_URL = "http://localhost:3001";
+export const SELF_URL = "http://localhost:3005";
 
 //target action
 
@@ -132,21 +133,21 @@ export function lyp(values, callback) {
   };
 }
 
-export function bookproperty(values, callback) {
+export function buyProperty(values, callback) {
   axios.defaults.headers.common["Authorization"] = token;
   const request = axios
-    .post(`${ROOT_URL}/bookproperty`, values)
+    .post(`${ROOT_URL}/buyproperty`, values)
     .then(response => {
       console.log("Status Code : ", response.status);
       if (response.status === 200) {
         callback();
       } else {
-        console.log("Problem in booking property.");
+        console.log("Problem in buying property.");
       }
     });
 
   return {
-    type: "BOOK_PROPERTY",
+    type: "BUY_PROPERTY",
     payload: request
   };
 }
@@ -169,7 +170,24 @@ export function sendmessage(values, callback) {
     payload: request
   };
 }
+export function checkTransactionHistory(values, callback) {
+  axios.defaults.headers.common["Authorization"] = token;
+  const request = axios
+    .get(`${ROOT_URL}/transactionhistory`, {params: values})
+    .then(response => {
+      console.log("Status Code : ", response.status);
+      if (response.status === 200) {
+        callback(response);
+      } else {
+        console.log("Problem in getting transaction history");
+      }
+    });
 
+  return {
+    type: "BOOK_PROPERTY",
+    payload: request
+  };
+}
 export function profile(values, callback) {
   axios.defaults.headers.common["Authorization"] = token;
   const request = axios.post(`${ROOT_URL}/profile`, values).then(response => {

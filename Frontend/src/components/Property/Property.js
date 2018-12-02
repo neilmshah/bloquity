@@ -4,8 +4,9 @@ import axios from "axios";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { bookproperty } from "../../actions";
-import { sendmessage } from "../../actions";
+import { buyProperty } from "../../actions";
+import { checkTransactionHistory } from "../../actions";
+import { sendmessage, ROOT_URL } from "../../actions";
 //today
 const today = new Date().toISOString().slice(0, 10);
 const token = localStorage.getItem("token");
@@ -37,6 +38,7 @@ class Property extends Component {
       yearbuilt,
       parking,
       rooms,
+      price,
       bathrooms,
       accomodates,
       nbr,
@@ -89,6 +91,7 @@ class Property extends Component {
       pic3: "",
       pic4: "",
       pic5: "",
+      price: price,
       owner_fname: owner_fname,
       owner_lname: owner_lname,
       //total: total,
@@ -97,14 +100,16 @@ class Property extends Component {
     };
 
     //Bind the handlers to this class
-    this.bookNow = this.bookNow.bind(this);
+    this.buyProperty = this.buyProperty.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.transactionHistory = this.transactionHistory.bind(this);
   }
 
   componentDidMount() {
+    document.title = "Bloquity";
     axios.defaults.headers.common["Authorization"] = token;
     axios
-      .get("http://localhost:3001/photos/profile", {
+      .get(`${ROOT_URL}/photos/profile`, {
         params: {
           email: sessionStorage.getItem("email")
         }
@@ -121,7 +126,7 @@ class Property extends Component {
 
     axios.defaults.headers.common["Authorization"] = token;
     axios
-      .get("http://localhost:3001/photos/property", {
+      .get(`${ROOT_URL}/photos/property`, {
         params: {
           owner_email: this.state.prop_owner_email,
           propnum_pk: this.state.propnum_pk
@@ -181,29 +186,42 @@ class Property extends Component {
   handleLogout = () => {
     localStorage.removeItem("token");
   };
+  transactionHistory = e => {
+    var headers = new Headers();
+    //prevent page from refresh
+    e.preventDefault();
+    // var email = sessionStorage.getItem('email');
+    // const data = {
+    //   streetaddr: this.state.streetaddr,
+    //   unit: this.state.unit,
+    //   zip: this.state.zip
+    // };
 
-  bookNow = e => {
+    // this.props.history.push("/dashboard");
+    // this.props.history.push ({
+    //   pathname: '/dashboard',
+    //   state: { tranhist: "HELLO" }
+    // })
+  };
+
+  buyProperty = e => {
     var headers = new Headers();
     //prevent page from refresh
     e.preventDefault();
     // var email = sessionStorage.getItem('email');
     const data = {
-      email: sessionStorage.getItem("email"),
-      owner_email: this.state.prop_owner_email,
-      propnum_pk: this.state.propnum_pk,
-      startdate: this.state.startdate_me,
-      enddate: this.state.enddate_me,
-      guests: this.state.guests,
-      total: this.state.total,
-      city: this.state.city,
-      state: this.state.state,
-      country: this.state.country,
-      headline: this.state.headline,
+      trans_amt: "100,000",
       fname: this.state.fname,
-      lname: this.state.lname
+      lname: this.state.lname,
+      owner_fname: this.state.owner_fname,
+      owner_lname: this.state.owner_lname,
+      streetaddr: this.state.streetaddr,
+      unit: this.state.unit,
+      zip: this.state.zip,
+      property_id: this.state.propnum_pk
     };
-    this.props.bookproperty(data, () => {
-      alert("Your booking has been made!");
+    this.props.buyProperty(data, () => {
+      alert("Congratualations. Property Brought! Check Property history.");
       this.props.history.push("/dashboard");
     });
   };
@@ -250,37 +268,46 @@ class Property extends Component {
               </a>
             </div>
           </div>
-          <div class="wrappernav-pro bluefont">
-            <link
+          <div class="wrappernavdetails ">
+            {/* <link
               href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
               rel="stylesheet"
             />
             <link
               href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css"
-              rel="stylesheet"
-            />
+              rel="stylesheet" */}
+
             {/* <a href="#" class="flag-icon-background flag-icon-us flag inline">
               {"   "}
             </a> */}
             {/* <a href="#" class="tb bluefont inline">
               Trip Boards
             </a> */}
+            <a href="#" class="flag-icon-background flag-icon-us flag inline">
+              {"   "}
+            </a>
+            <a href="/dashboard" class="buttonlyp default bluefont inline">
+              Property History
+            </a>
+            <button class="buttonlyp default bluefont inline">About Us</button>
+            <button class="buttonlyp default bluefont inline">Contact</button>
+            <button class="buttonlyp default bluefont inline">
+              Post Your Property
+            </button>
             <div class="btn-group inline dropdownnav">
               <div
-                class="btn-home inline bluefont"
+                class="btn-home inline bluefont-home"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
                 <img src={this.state.profileicon} class="smallimg" />
                 {"   "}
-                {this.state.fname.concat(
-                  " " + this.state.lname.charAt(0) + "."
-                )}{" "}
+                {this.state.fname.concat(" " + this.state.lname)}{" "}
                 <span class="glyphicon glyphicon-triangle-bottom smallicon" />
               </div>
               <ul class="dropdown-menu dropdown-menu-right bluefont">
-                <li>
+                {/* <li>
                   {" "}
                   <a class="dropdown-item bluefont" href="/inbox">
                     <p class="bluefont">
@@ -289,7 +316,7 @@ class Property extends Component {
                       Inbox
                     </p>
                   </a>
-                </li>
+                </li> */}
                 <br />
                 <li>
                   <a class="dropdown-item" href="/dashboard">
@@ -337,123 +364,7 @@ class Property extends Component {
                 </li>
               </ul>
             </div>
-            <a href="/inbox" class="bluefont">
-              <span
-                class="glyphicon-glyphicon-envelope envelope inline bluefont"
-                aria-hidden="true"
-              >
-                <i class="fa fa-envelope bluefont " aria-hidden="true">
-                  {"  "}
-                </i>
-              </span>
-            </a>
-
-            <div class="btn-group userdd bluefont inline dropdownnav">
-              <div
-                class="btn-home inline bluefont"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Help{" "}
-                <span class="glyphicon glyphicon-triangle-bottom smallicon" />
-              </div>
-              <ul class="dropdown-menu dropdown-menu-right bluefont">
-                <li>
-                  {" "}
-                  <a class="dropdown-item " href="#">
-                    <p class="bluefont">
-                      {"   "}
-                      Visit help center
-                    </p>
-                  </a>
-                </li>
-                <li role="separator" class="divider dropdownicons" />
-
-                <li class="dropdown-header travelersfont">
-                  <b>Travelers</b>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="bluefont">
-                      {" "}
-                      {"   "}
-                      How it works
-                    </p>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="bluefont">
-                      {"   "}
-                      Security Center
-                    </p>
-                  </a>
-                </li>
-                <li role="separator" class="divider dropdownicons" />
-
-                <li class="dropdown-header travelersfont">
-                  <b>Home Owners</b>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="bluefont">
-                      {" "}
-                      {"   "}
-                      How it works
-                    </p>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href={
-                      sessionStorage.getItem("typeofaccount") == "owner"
-                        ? "/lyp"
-                        : "#"
-                    }
-                  >
-                    <p class="bluefont">
-                      {" "}
-                      {"   "}
-                      List your property
-                    </p>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="bluefont">
-                      {" "}
-                      {"   "}
-                      Community
-                    </p>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="bluefont">
-                      {" "}
-                      {"   "}
-                      Discovery Hub
-                    </p>
-                  </a>
-                </li>
-                <li role="separator" class="divider dropdownicons" />
-                <li class="dropdown-header travelersfont">
-                  <b>Property managers</b>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="bluefont">
-                      {" "}
-                      {"   "}
-                      List your properties
-                    </p>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <a
+            {/* <a
               href={
                 sessionStorage.getItem("typeofaccount") == "owner"
                   ? "/lyp"
@@ -462,11 +373,12 @@ class Property extends Component {
               class="buttonlyp default bluefont inline"
             >
               List your property
-            </a>
-            <div class="homeawayimg-pro inline">
-              <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.10.6/bce/moniker/homeaway_us/birdhouse-bceheader.svg" />
+            </a> */}
+            <div class="homeawayimg-home inline">
+              <img src="https://i.imgur.com/fLTMlTI.png" />
             </div>
           </div>
+
           {/*-----------------------------------------PHOTO -------------------------------------*/}
           <div
             id="myCarousel"
@@ -526,116 +438,69 @@ class Property extends Component {
           {/*-----------------------------------------PHOTO -------------------------------------*/}
 
           <br />
-          <p class="grayie">Description of Property: </p>
-          <p class="propdescclass">{this.state.propdesc}</p>
+          <div class="tablecss2">
+            <p class="grayie_Description">
+              <b> Description of Property:</b> {this.state.propdesc}{" "}
+            </p>
+          </div>
 
-          <div class="propinfo desc">
-            <h2>{this.state.headline}</h2>{" "}
-            {/* <p class="grayie">
-              <span>
-                {" "}
-                <i class="glyphicon glyphicon-map-marker" />{" "}
-                {this.state.city.charAt(0).toUpperCase() +
-                  this.state.city.slice(1)}
-                ,{" "}
-                {this.state.state.charAt(0).toUpperCase() +
-                  this.state.state.slice(1)}
-                ,{" "}
-                {this.state.country.charAt(0).toUpperCase() +
-                  this.state.country.slice(1)}
-              </span>
-            </p> */}
-            <br />
-            <br />
-            {/* <div class="iconsprop">
-              <i class="picon glyphicon glyphicon-home">
-                <br />
-                <span class="iconnames">
+          <div class="tablecss3">
+            <div class="coninfo">
+              {/* <div class="propinfo_New descNew">
+                <h2>{this.state.headline}</h2>
+              </div> */}
+              {/* <p class="grayie_Details">
+              Details </p> */}
+              <thead>
+                <tr>
+                  <th>
+                    {" "}
+                    <h3 class="bluefont h2th3">
+                      <center> {"     "} Details</center>
+                      <br />
+                    </h3>
+                  </th>
+                </tr>
+              </thead>
+              <div class="iconsprop">
+                <p class="grayie">
+                  <b>Property Manager: </b> {this.state.owner_fname}{" "}
+                  {this.state.owner_lname}
+                </p>
+
+                <p class="grayie">
+                  <b>Address of Property:</b> {"  "}
+                  {this.state.streetaddr} {", "}{" "}
+                  {this.state.city.charAt(0).toUpperCase() +
+                    this.state.city.slice(1)}{" "}
+                  {", "} {this.state.state.toUpperCase()} {", "}{" "}
+                  {this.state.zip}
+                </p>
+
+                <p class="grayie">
                   {" "}
+                  <b>Price of Property: </b>
+                  {"$"}
+                  {this.state.price}
+                </p>
+                <p class="grayie">
+                  {" "}
+                  <b>Property Size: </b>
+                  {this.state.sqft} {"sqft"}
+                </p>
+
+                <p class="grayie">
+                  <b>Property Type: </b>{" "}
                   {this.state.proptype.charAt(0).toUpperCase() +
                     this.state.proptype.slice(1)}
-                </span>
-              </i>
-              <i class=" picon glyphicon glyphicon-bed">
-                {" "}
-                <br />
-                <span class="iconnames">Rooms: {this.state.rooms}</span>
-              </i>
-              <i class=" picon glyphicon glyphicon-user">
-                <br />
-                <span class="iconnames">Sleeps: {this.state.accomodates}</span>
-              </i>
-              <link
-                rel="stylesheet"
-                href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-                integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-                crossorigin="anonymous"
-              />
-              <i class=" picon fas fa-bath">
-                {" "}
-                <br />
-                <span class="iconnames">Baths: {this.state.bathrooms}</span>
-              </i>
-              <i class="picon far fa-moon">
-                {" "}
-                <br />
-                <span class="iconnames">
-                  Minimum Stay: {this.state.minstay}
-                </span>
-              </i>
-            </div> */}
-            <br />
-            <br />
-            <hr />
-            <br />
-            {/* <p class="grayie">About the Property</p>
-            <p class="propdescclass">{this.state.propdesc}</p> */}
-            <br />
-            <br />
-            <br />
-            {/* <p class="grayie">Property Size</p>
-            <p class="sqftclass">{this.state.sqft}</p> */}
-            <br />
-            <br />
-            <br />
-            {/* <b>Property Manager</b>
-            <br />
-            <p class="grayie">
-              {this.state.owner_fname} {this.state.owner_lname}
-            </p> */}
-            <br />
-            <br />
-            <hr />
-          </div>
-          <div class="detailscontainer">
-            <div class="coninfo">
-              <p class="grayie">Details </p>
+                </p>
 
-              <div class="iconsprop">
-                <p class="grayie">Address of Property</p>
-                <p class="sqftclass">{this.state.sqft}</p>
-                <br />
-                <p class="grayie">Property Size</p>
-                <p class="sqftclass">{this.state.sqft}</p>
-                <i class="picon glyphicon glyphicon-home">
-                  <br />
-                  <span class="iconnames">
-                    {" "}
-                    {this.state.proptype.charAt(0).toUpperCase() +
-                      this.state.proptype.slice(1)}
-                  </span>
-                </i>
                 <i class=" picon glyphicon glyphicon-bed">
                   {" "}
                   <br />
-                  <span class="iconnames">Rooms: {this.state.rooms}</span>
+                  <span class="iconnames">Bedrooms: {this.state.rooms}</span>
                 </i>
-                {/* <i class=" picon glyphicon glyphicon-user">
-                  <br />
-                  <span class="iconnames">
-                    Sleeps: {this.state.accomodates}
-                  </span>
-                </i> */}
+
                 <link
                   rel="stylesheet"
                   href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -645,83 +510,45 @@ class Property extends Component {
                 <i class=" picon fas fa-bath">
                   {" "}
                   <br />
-                  <span class="iconnames">Baths: {this.state.bathrooms}</span>
-                </i>
-                {/* <i class="picon far fa-moon">
-                  {" "}
-                  <br />
                   <span class="iconnames">
-                    Minimum Stay: {this.state.minstay}
+                    Bathrooms: {this.state.bathrooms}
                   </span>
-                </i> */}
+                </i>
               </div>
-              {/* <h2>
-                ${this.state.nbr}
-                <span class="grayie small"> per night</span>
-              </h2> */}
+
               <br />
               <br />
-              {/* <p>
-                <span class="grayie">
-                  <i class="fas fa-check-circle green" />
-                  {"  "}
-                  Your dates are{" "}
-                </span>
-                <b>Available!</b>
-              </p> */}
-              {/* <table>
-                <tr>
-                  <td class="borderbox spaces">
-                    <span class="grayie"> Check in:</span>
-                    <br />
-                    {this.state.startdate_me}
-                  </td>
-                  <td class="borderbox spaces">
-                    <span class="grayie"> Check out:</span>
-                    <br />
-                    {this.state.enddate_me}
-                  </td>
-                </tr>
-                <tr>
-                  {" "}
-                  <td colspan="2" class="borderbox spaces">
-                    <span class="grayie"> Guests:</span>
-                    <br />
-                    {this.state.guests} guest
-                  </td>
-                </tr>
-              </table> */}
-              {/* <br />
-              <p class="grayie">Total: ${this.state.total}</p>
-              <p class="grayie small">Includes taxes and fees.</p>
-              <br /> */}
-              <button class="homesearchbutton book" onClick={this.bookNow}>
-                Buy
+
+              <button class="homesearchbutton book" onClick={this.buyProperty}>
+                Buy Property
               </button>
               <br />
               <br />
-              {/* <button onClick={this.sendMessage} class="messagebutton ">
-                Ask Owner a question
-              </button> */}
-              <button class="homesearchbutton book" onClick={this.bookNow}>
+              {/* <Link to={{
+      pathname: '/template',
+      search: '?query=abc',
+      state: { detail: response.data }
+    }}> My Link </Link> */}
+
+              <Link
+                class="homesearchbutton book"
+                id="linktranhist"
+                to={{
+                  pathname: "/dashboard",
+                  state: {
+                    streetaddr: this.state.streetaddr,
+                    unit: this.state.unit,
+                    zip: this.state.zip
+                  }
+                }}
+              >
                 View Transaction History
-              </button>
+              </Link>
+
               <br />
-              {/* <div class="small discpay">
-                <span class="grayie">For booking assistance, call</span>{" "}
-                <b>888-829-7076</b>
-                <br />
-                <b>Property #</b> <span class="grayie">4578714</span>{" "}
-                <b>Unit#</b>
-                <span class="grayie">5204351</span>
-              </div> */}
+
               <br />
               <br />
-              <b>Property Manager</b>
-              <br />
-              <p class="grayie">
-                {this.state.owner_fname} {this.state.owner_lname}
-              </p>
             </div>
           </div>
         </div>
@@ -745,5 +572,5 @@ class Property extends Component {
 
 export default connect(
   null,
-  { bookproperty, sendmessage }
+  { buyProperty, sendmessage, checkTransactionHistory }
 )(Property);

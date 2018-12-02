@@ -27,14 +27,14 @@ body {
 .login-form .form-control {
   background: #f7f7f7 none repeat scroll 0 0;
   border: 0.5px solid #d4d4d4;
-  border-radius: 2px;
+  border-radius: 10px;
   font-size: 14px;
   height: 50px;
   line-height: 10px;
 }
 .main-div {
-  background: #ffffff none repeat scroll 0 0;
-  border-radius: 0.5px;
+  background: rgba(14, 23, 104, 0.89) none repeat scroll 0 0;
+  border-radius: 19.5px;
   margin: 10px auto 10px;
   max-width: 32%;
   padding: 20px 20px 20px 20px;
@@ -48,7 +48,7 @@ body {
   text-align: center;
 }
 .forgot a {
-  color: #777777;
+  color: #f8f1f1;
   font-size: 14px;
   text-decoration: underline;
 }
@@ -153,7 +153,7 @@ hr {
 }
 .account {
   font-size: 25px;
-  color: rgb(143, 137, 137);
+  color: rgb(219, 218, 218);
 }
 
 /*---------------------------------------------------------*/
@@ -286,6 +286,7 @@ $button-active-blue: #1669f2; */
 .disclaimer {
   font-size: 12.5px;
   margin-top: 10px;
+  color: rgb(243, 236, 236);
 }
 
 .disclaimer2 {
@@ -340,7 +341,7 @@ $button-active-blue: #1669f2; */
 }
 
 .header-bce-home_New {
-  background: rgb(38, 52, 175);
+  background: rgb(14, 23, 104);
   border-top: 0;
   position: relative;
   width: 100%;
@@ -452,10 +453,16 @@ div.wrappernav {
 div.wrappernav-pro {
   position: absolute;
   width: 100%; /* or whatever */
-  left: 58vw;
+  left: 42vw;
   top: 0.8vw;
 }
 
+div.wrappernavdetails {
+  position: absolute;
+  width: 100%; /* or whatever */
+  left: 40em;
+  top: 0.8em;
+}
 div.wrappernav-home {
   position: absolute;
   width: 100%; /* or whatever */
@@ -465,10 +472,28 @@ div.wrappernav-home {
   transition: opacity 300ms ease-in-out 0s;
 }
 
+div.wrappernav-homepage {
+  position: absolute;
+  width: 100%; /* or whatever */
+  left: 43vw;
+  top: 0.8vw;
+  font-size: 110%;
+  transition: opacity 300ms ease-in-out 0s;
+}
+
 div.wrappernav-home-nli {
   position: absolute;
   width: 100%; /* or whatever */
-  left: 65vw;
+  left: 58vw;
+  top: 0.8vw;
+  font-size: 110%;
+  transition: opacity 300ms ease-in-out 0s;
+}
+
+div.wrappernav-homepage-nli {
+  position: absolute;
+  width: 100%; /* or whatever */
+  left: 47vw;
   top: 0.8vw;
   font-size: 110%;
   transition: opacity 300ms ease-in-out 0s;
@@ -526,6 +551,7 @@ div.wrappernav-home-nli {
   border: 1px solid rgb(196, 195, 195);
   background-color: white;
   padding: 14px 28px;
+  margin-left: 0.5vw;
   cursor: pointer;
   border-radius: 40px;
   transition: 0.3s;
@@ -688,6 +714,31 @@ div.wrappernav-home-nli {
   left: 13.2vw;
 }
 
+/* new */
+
+.flex-filter {
+  padding-left: 2vw;
+  border-radius: 15px;
+  bottom: 5vw;
+  left: 17vw;
+  height: 8.5vw;
+  width: 44.5vw;
+  margin-left: 27vw;
+  background: rgba(14, 23, 104, 0.89);
+  align-items: center;
+}
+
+.flex-filter2 {
+  position: relative;
+  border-radius: 8px;
+  bottom: 5vw;
+  left: 0.3vw;
+  height: 15vw;
+  width: 32.5vw;
+  display: flex;
+  align-items: center;
+}
+
 .flex-container_New {
   position: relative;
   border-radius: 8px;
@@ -697,6 +748,24 @@ div.wrappernav-home-nli {
   width: 72.5vw;
   display: flex;
   align-items: center;
+}
+
+.flex-container_New3 {
+  position: relative;
+  border-radius: 8px;
+  left: 1vw;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5vw;
+  margin-left: 20vw;
+}
+.gapsf {
+  margin: 1vw;
+  bottom: 5vw;
+}
+
+.gapsfi {
+  right: 12vw;
 }
 
 .flex-container_New2 {
@@ -775,13 +844,35 @@ input::placeholder {
   font-size: 1.2vw;
 }
 
+.mediumsearch {
+  width: 15.5vw;
+  font-size: 1.2vw;
+}
+
 .homesearchbutton {
   background-color: #0067db;
-  font-size: 1.2vw;
+  font-size: 1.5vw;
+  margin-left: 8vw;
   border: none;
   border-radius: 40px;
   color: white;
   line-height: 1vw;
+}
+
+.homesearchbuttondash {
+  background-color: #0067db;
+  font-size: 1.5vw;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  line-height: 1vw;
+  width: 12vw;
+  padding: 1.5vw;
+}
+
+.homesearchbuttondash:focus {
+  outline: none;
+  border: none;
 }
 
 .homesearchbutton_New {
@@ -789,6 +880,7 @@ input::placeholder {
   background-color: #4c5258;
   font-size: 2vw;
   font-weight: 900;
+  margin-left: 2vw;
 
   border: none;
   border-radius: 40px;
@@ -937,7 +1029,7 @@ input[type="date"]:focus::after {
 }
 .carousel-control.right {
   right: 50;
-  color: white;
+  color: rgb(146, 149, 187);
 }
 /* The colour of the indicators */
 .carousel-indicators li {
@@ -954,18 +1046,19 @@ input[type="date"]:focus::after {
   position: relative;
   font-family: HelveticaNeue-Light;
 
-  color: rgb(107, 106, 106);
+  color: rgb(146, 149, 187);
   padding-top: 1vw;
   font-size: 1vw;
 }
 
 .white {
-  color: white;
+  color: rgb(146, 149, 187);
   background: none;
 }
 
 .left {
   left: 0;
+  color: rgb(146, 149, 187);
 }
 
 .noborder {
@@ -1183,10 +1276,55 @@ input[type="date"]:focus::after {
   color: rgb(51, 51, 51);
   font-weight: 600;
 }
-
+/* Changed */
 .grayie {
+  margin-left: 0vw;
+  color: black;
+}
+
+.grayie_Description {
+  margin-left: 0vw;
+  margin-top: 0vw;
+  color: black;
+}
+
+.tablecss2 {
+  width: 51vw;
+  height: fit-content;
+  margin-left: 5.5vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  padding: 2vw;
+}
+.h2th2 {
+  margin-top: -1vw;
+}
+
+grayie_Addr {
   margin-left: 10vw;
-  color: gray;
+  color: black;
+}
+
+.grayie_Details {
+  margin-left: 8vw;
+  font-size: 30px;
+
+  color: black;
+}
+
+.tablecss3 {
+  position: absolute;
+  top: 10.5vw;
+  left: 66vw;
+  width: 27vw;
+  height: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  padding: 2vw;
+}
+.h2th3 {
+  margin-left: 7vw;
+  margin-top: 0vw;
 }
 
 .usericon {
@@ -1658,8 +1796,10 @@ input:checked + .slider:before {
 
 /*----------------------------------------LYP NAV---------------------------*/
 
+/* changed A */
 .tabitem {
   color: black;
+  margin-top: 1vw;
   width: 10vw;
 }
 
@@ -1689,6 +1829,21 @@ div.card {
   background-color: white;
   padding: 2vw;
   left: 10vw;
+}
+
+div.card_New {
+  position: relative;
+  bottom: 10vw;
+  width: max-content;
+
+  text-align: left;
+  background-color: white;
+  padding: 1vw;
+  left: 35vw;
+}
+
+.cardcontent {
+  text-align: center;
 }
 
 /*----------------------------------------LYP NAV---------------------------*/
@@ -2030,6 +2185,16 @@ changed
   top: 0vw;
   margin-right: 30vw;
 }
+
+.srtabledata_New {
+  position: absolute;
+  width: 100vw;
+  padding: -20vw;
+  margin: 1vw;
+  top: -1vw;
+  margin-right: 30vw;
+}
+
 /* 
 .imgprop {
   width: 70%;
@@ -2042,18 +2207,21 @@ changed
 .carouselprop {
   position: relative;
   top: 0vw;
-  margin-left: 10vw;
+  margin-left: 6vw;
   width: 50vw;
 }
+/* changed */
 #leftcar {
   position: absolute;
   top: 20vw;
   left: -7vw;
+  color: rgb(146, 149, 187);
 }
 #rightcar {
   position: absolute;
   top: 20vw;
   right: -7vw;
+  color: rgb(146, 149, 187);
 }
 .propinfo {
   position: static;
@@ -2063,10 +2231,17 @@ changed
   width: 75vw;
 }
 
+/* Changed */
+.propinfo_New {
+  position: static;
+  top: 10vw;
+  width: 75vw;
+  margin-left: 2cvw;
+}
 .picon {
-  padding: 1vw;
+  padding: 0.5vw;
   font-size: 2vw;
-  margin-left: 3vw;
+  margin-left: 2vw;
   align-items: center;
 }
 
@@ -2074,27 +2249,28 @@ changed
   font-weight: 300;
   font-size: 1.1vw;
   font-family: Arial, Helvetica, sans-serif;
-  color: gray;
+  color: black;
 }
 
 .propdescclass {
   margin-left: 10vw;
   word-wrap: break-word;
 }
-
+/* changed */
 .detailscontainer {
   position: absolute;
   top: 10vw;
-  left: 70vw;
-  width: 25vw;
+  left: 68vw;
+  width: 27vw;
   height: fit-content;
-  border: #d6d6d6 solid 1px;
-  background: white;
+  border: black solid 4px;
+  background: #f6f6f6;
 }
-
+/* changed */
 .coninfo {
-  padding-left: 2vw;
-  padding-top: 3vw;
+  padding-left: 1.5vw;
+  padding-right: 1vw;
+  padding-top: 1vw;
 }
 
 .mixcolumn {
@@ -2106,6 +2282,15 @@ changed
   padding-left: 2vw;
   padding-right: 2vw;
   padding-bottom: 1vw;
+}
+#linktranhist {
+  background-color: #0067db;
+  font-size: 1.3vw;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 6px;
+  margin-left: 2.5vw;
 }
 
 .book {
@@ -2128,6 +2313,7 @@ changed
 .tableh {
   font-size: 1.5vw;
   color: gray;
+  width: 14vw;
 }
 
 .messagebutton {
@@ -2186,6 +2372,19 @@ changed
   left: 3.6vw;
 }
 
+.filterlabel_New {
+  position: relative;
+  left: 3.7vw;
+  font-size: 20x;
+}
+
+.filterresultslabel_New {
+  position: relative;
+  left: 0.2vw;
+  font-size: 20px;
+  color: white;
+}
+
 #myInput {
   background-position: 10px 10px;
   background-repeat: no-repeat;
@@ -2194,4 +2393,16 @@ changed
   padding: 0.5vw 1vw 0.5vw 4vw;
   border: 1px solid #ddd;
   margin-bottom: 12px;
+}
+
+.tablecss {
+  width: 80vw;
+  margin-left: 10vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30px;
+  padding: 5vw;
+}
+
+.h2th {
+  margin-top: -1vw;
 }

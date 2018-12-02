@@ -9,6 +9,7 @@ import { BrowserRouter, Link, Route } from "react-router-dom";
 
 import { connect } from "react-redux";
 import "react-datepicker/dist/react-datepicker.css";
+import { ROOT_URL } from "../../actions";
 const token = localStorage.getItem("token");
 //create the Navbar Component
 class Home extends Component {
@@ -46,7 +47,7 @@ class Home extends Component {
     if (localStorage.getItem("token")) {
       axios.defaults.headers.common["Authorization"] = token;
       axios
-        .get("http://localhost:3001/photos/profile", {
+        .get(`${ROOT_URL}/photos/profile`, {
           params: {
             email: sessionStorage.getItem("email")
           }
@@ -115,6 +116,11 @@ class Home extends Component {
     localStorage.removeItem("token");
   };
 
+  goToDash=()=>{
+    this.location.history.push("/dashboard")
+
+  }
+
   render() {
     // var sdate = new Date(this.state.startdate);
     // var year = sdate.getFullYear();
@@ -139,7 +145,7 @@ class Home extends Component {
       console.log("Able to read cookie");
 
       navLogin = (
-        <div class="wrappernav-home">
+        <div class="wrappernav-homepage">
           <link
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
             rel="stylesheet"
@@ -148,10 +154,25 @@ class Home extends Component {
             href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css"
             rel="stylesheet"
           />
-
+         <a
+            href="/dashboard"
+            class="buttonlyp default bluefont inline"
+          >
+            Property History
+          </a>
+ 
           <button class="buttonlyp default bluefont inline">About Us</button>
 
           <button class="buttonlyp default bluefont inline">Contact</button>
+
+          <a
+            href={
+              sessionStorage.getItem("typeofaccount") == "owner" ? "/lyp" : "#"
+            }
+            class="buttonlyp default bluefont inline"
+          >
+            Post your property
+          </a>
 
           <div class="btn-group inline dropdownnav">
             <div
@@ -180,7 +201,7 @@ class Home extends Component {
                 <a class="dropdown-item" href="/dashboard">
                   <p class="bluefont">
                     <span class="glyphicon glyphicon-briefcase dropdownicons" />{" "}
-                    Dashboard
+                    Property History
                   </p>
                 </a>
               </li>
@@ -237,23 +258,16 @@ class Home extends Component {
             </ul>
           </div>
 
-          <a
-            href={
-              sessionStorage.getItem("typeofaccount") == "owner" ? "/lyp" : "#"
-            }
-            class="buttonlyp default bluefont inline"
-          >
-            Post your property
-          </a>
-          {/* <div class="homeawayimg-home inline">
- <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.11.0/bce/moniker/homeaway_us/birdhouse-bceheader-white.svg" />
- </div> */}
+          
+           <div class="homeawayimg-home inline">
+        <img src="https://i.imgur.com/fLTMlTI.png" />
+        </div> 
         </div>
       );
     } else {
       //Else display login button
       navLogin = (
-        <div class="wrappernav-home-nli">
+        <div class="wrappernav-homepage-nli">
           <link
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
             rel="stylesheet"
@@ -263,9 +277,23 @@ class Home extends Component {
             rel="stylesheet"
           />
 
+         <a
+            href="/dashboard"
+            class="buttonlyp default bluefont inline"
+          >
+            Property History
+          </a>
+
           <button class="buttonlyp default bluefont inline">About Us</button>
 
           <button class="buttonlyp default bluefont inline">Contact</button>
+
+           <a
+            href="/login"
+            class="buttonlyp default bluefont inline"
+          >
+            Post your property
+          </a>
 
           <div class="btn-group inline dropdownnav">
             <div
@@ -292,10 +320,9 @@ class Home extends Component {
               </li>
             </ul>
           </div>
-
-          {/* <div class="homeawayimg-home inline">
- <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.11.0/bce/moniker/homeaway_us/birdhouse-bceheader-white.svg" />
- </div> */}
+          <div class="homeawayimg-home inline">
+        <img src="https://i.imgur.com/fLTMlTI.png" />
+        </div> 
         </div>
       );
     }
@@ -408,7 +435,7 @@ const mapDispatchStateToProps = dispatch => {
 
       axios.defaults.headers.common["Authorization"] = token;
       axios
-        .get("http://localhost:3001/home", {
+        .get(`${ROOT_URL}/home`, {
           params: {
             email: sessionStorage.getItem("email")
           }

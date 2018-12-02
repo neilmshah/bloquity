@@ -60,24 +60,24 @@ class SearchResults extends Component {
   }
 
   componentDidMount() {
-    if (token) {
-      axios.defaults.headers.common["Authorization"] = token;
-      axios
-        .get("http://localhost:3001/photos/profile", {
-          params: {
-            email: sessionStorage.getItem("email")
-          }
-        })
-        .then(response => {
-          //update the state with the response data
-          console.log("Image Res : ", response);
-          let imagePreview = "data:image/jpg;base64, " + response.data;
-          this.setState({
-            profilepic: imagePreview,
-            profileicon: imagePreview
-          });
-        });
-    }
+    // if (token) {
+    //   axios.defaults.headers.common["Authorization"] = token;
+    //   axios
+    //     .get("http://localhost:3001/photos/profile", {
+    //       params: {
+    //         email: sessionStorage.getItem("email")
+    //       }
+    //     })
+    //     .then(response => {
+    //       //update the state with the response data
+    //       console.log("Image Res : ", response);
+    //       let imagePreview = "data:image/jpg;base64, " + response.data;
+    //       this.setState({
+    //         profilepic: imagePreview,
+    //         profileicon: imagePreview
+    //       });
+    //     });
+    // }
 
     this.props.onGetRender(
       // this.state.where,
@@ -228,7 +228,7 @@ class SearchResults extends Component {
           </tr>
         );
       });
-    if (token) {
+    if (1) {
       navLogin = (
         <div>
           <div class="header-bce-home_New bluefont-home">
@@ -254,6 +254,16 @@ class SearchResults extends Component {
             {/* <a href="#" class="tb bluefont inline">
  Trip Boards
  </a> */}
+             <a
+              href={
+                sessionStorage.getItem("typeofaccount") == "owner"
+                  ? "/lyp"
+                  : "#"
+              }
+              class="buttonlyp default bluefont inline"
+            >
+              Post your Property
+            </a>
             <div class="btn-group inline dropdownnav">
               <div
                 class="btn-home inline bluefont-home"
@@ -319,6 +329,10 @@ class SearchResults extends Component {
                 </li>
               </ul>
             </div>
+
+              <div class="homeawayimg-home inline">
+        <img src="https://i.imgur.com/fLTMlTI.png" />
+        </div> 
             {/* <a href="/inbox" class="bluefont">
  <span
  class="glyphicon-glyphicon-envelope envelope inline bluefont"
@@ -331,7 +345,7 @@ class SearchResults extends Component {
  </a> */}
 
             <div class="btn-group userdd bluefont inline dropdownnav">
-              <div
+              {/* <div
                 class="btn-home inline bluefont-home"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -339,40 +353,40 @@ class SearchResults extends Component {
               >
                 Help{" "}
                 <span class="glyphicon glyphicon-triangle-bottom smallicon" />
-              </div>
+              </div> */}
               <ul class="dropdown-menu dropdown-menu-right bluefont">
-                <li>
+                {/* <li>
                   {" "}
                   <a class="dropdown-item " href="#">
                     <p class="bluefont"> Visit help center</p>
                   </a>
-                </li>
+                </li> */}
                 <li role="separator" class="divider dropdownicons" />
 
-                <li class="dropdown-header travelersfont">
+                {/* <li class="dropdown-header travelersfont">
                   <b>Travelers</b>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a class="dropdown-item" href="#">
                     <p class="bluefont"> How it works</p>
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a class="dropdown-item" href="#">
                     <p class="bluefont"> Security Center</p>
                   </a>
-                </li>
+                </li> */}
                 <li role="separator" class="divider dropdownicons" />
 
-                <li class="dropdown-header travelersfont">
+                {/* <li class="dropdown-header travelersfont">
                   <b>Home Owners</b>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a class="dropdown-item" href="#">
                     <p class="bluefont"> How it works</p>
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a
                     class="dropdown-item"
                     href={
@@ -383,21 +397,21 @@ class SearchResults extends Component {
                   >
                     <p class="bluefont"> List your property</p>
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a class="dropdown-item" href="#">
                     <p class="bluefont"> Community</p>
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a class="dropdown-item" href="#">
                     <p class="bluefont"> Discovery Hub</p>
                   </a>
-                </li>
+                </li> */}
                 <li role="separator" class="divider dropdownicons" />
-                <li class="dropdown-header travelersfont">
+                {/* <li class="dropdown-header travelersfont">
                   <b>Property managers</b>
-                </li>
+                </li> */}
                 <li>
                   <a class="dropdown-item" href="#">
                     <p class="bluefont"> Post your property</p>
@@ -405,16 +419,7 @@ class SearchResults extends Component {
                 </li>
               </ul>
             </div>
-            <a
-              href={
-                sessionStorage.getItem("typeofaccount") == "owner"
-                  ? "/lyp"
-                  : "#"
-              }
-              class="buttonlyp default bluefont inline"
-            >
-              Post your Property
-            </a>
+           
             {/* <div class="homeawayimg-pro inline">
  <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.10.6/bce/moniker/homeaway_us/birdhouse-bceheader.svg" />
  </div> */}
@@ -429,47 +434,50 @@ class SearchResults extends Component {
         {navLogin}
         <br />
         <br />
+        <div class="flex-filter">
+        <br />
         <label class="filterresultslabel_New">Filter Postings: </label>
         <br />
-        <label class="filterlabel_New">Price:</label>
+        <div class="flex-filter2">
+        <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-usd" />{" "}
         <input
           type="number"
           id="myInput"
           onChange={this.handlePriceFilter}
-          placeholder="enter exact price"
-          class="filters"
+          placeholder="Price"
+          class="searchfields mediumsearch"
           min="0"
           step="1"
         />
-        {/* <label class="filterlabel">From</label>
- <input
- type="date"
- id="myInput"
- onChange={this.handleFromFilter}
- class="filters"
- /> */}
-        {/* <label class="filterlabel">To</label>
- <input
- type="date"
- id="myInput"
- onChange={this.handleToFilter}
- class="filters"
- /> */}
-        <label class="filterlabel_New">Rooms: </label>
+
+        </div>
+
+        {/* <label class="filterlabel_New">Rooms: </label> */}
+        <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-home" />{" "}
         <input
           type="number"
           id="myInput"
           onChange={this.handleRoomFilter}
-          class="filters"
+          class="searchfields mediumsearch"
+          placeholder="Rooms"
           min="0"
           step="1"
-        />
+        /></div>
+        </div>
+        
+        </div>
+
         <br />
         <br />
+        <div class="tablecss">
         <table class="table" id="myTable">
           <thead>
             <tr>
-              <th class="blackie"> {propnew.length} postings</th>
+              <th > <h3 class="bluefont h2th">
+              <center>{propnew.length} postings</center>
+              <br></br></h3></th>
             </tr>
           </thead>
           <tbody>
@@ -477,12 +485,18 @@ class SearchResults extends Component {
             {details}
           </tbody>
         </table>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div>
         <Pagination
           itemsCount={propnew.length}
           pageSize={pageSize}
           currentPage={currentPage}
           onPageChange={this.handlePageChange}
         />
+        </div>
       </div>
     );
   }
