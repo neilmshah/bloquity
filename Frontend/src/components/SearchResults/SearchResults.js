@@ -163,46 +163,40 @@ class SearchResults extends Component {
                 {" "}
                 <h2>
                   <Link
-                    to={{
-                      pathname: "/property",
-                      state: {
-                        propnum_pk: r._id,
-                        email: r.email,
-                        // where: this.state.where,
-                        // startdate: this.state.startdate,
-                        // enddate: this.state.enddate,
-                        // guests: this.state.guests,
-                        zip: this.state.zip,
-                        city: this.state.city,
-                        state: this.state.state,
-                        fname: this.state.fname,
-                        lname: this.state.lname,
-                        country: r.country,
-                        price: r.price,
+                    to={
+                      {
+                        pathname: "/property",
+                        state: {
+                          propnum_pk: r._id,
+                          email: r.email, // guests: this.state.guests, // enddate: this.state.enddate, // startdate: this.state.startdate, // where: this.state.where,
 
-                        proptype: r.proptype,
-                        streetaddr: r.streetaddr,
-                        unit: r.unit,
-                        city: r.city,
-                        state: r.state,
-                        zip: r.zip,
-                        sqft: r.sqft,
-                        yearbuilt: r.yearbuilt,
-                        parking: r.parking,
-                        headline: r.headline,
-                        propdesc: r.propdesc,
-                        rooms: r.rooms,
-                        bathrooms: r.bathrooms,
-                        //accomodates: r.accomodates,
-                        //startdate: r.startdate,
-                        //enddate: r.enddate,
-                        //nbr: r.nbr,
-                        // minstay: r.minstay,
-                        //cf: r.cf,
-                        owner_fname: r.owner_fname, //doubt
-                        owner_lname: r.owner_lname
-                      }
-                    }}
+                          zip: this.state.zip,
+                          city: this.state.city,
+                          state: this.state.state,
+                          fname: this.state.fname,
+                          lname: this.state.lname,
+                          country: r.country,
+                          price: r.price,
+                          proptype: r.proptype,
+                          streetaddr: r.streetaddr,
+                          unit: r.unit,
+                          city: r.city,
+                          state: r.state,
+                          zip: r.zip,
+                          sqft: r.sqft,
+                          yearbuilt: r.yearbuilt,
+                          parking: r.parking,
+                          headline: r.headline,
+                          propdesc: r.propdesc,
+                          rooms: r.rooms,
+                          bathrooms: r.bathrooms, //nbr: r.nbr, //enddate: r.enddate, //startdate: r.startdate, //accomodates: r.accomodates,
+                          // minstay: r.minstay,
+                          //cf: r.cf,
+                          owner_fname: r.owner_fname,
+                          owner_lname: r.owner_lname
+                        }
+                      } //doubt
+                    }
                   >
                     <td> {r.headline}</td>
                   </Link>
@@ -212,7 +206,7 @@ class SearchResults extends Component {
                 </td>
                 <br />
                 <td>
-                  <h4>{r.streetaddr} </h4>
+                  <h4>{r.streetaddr} {" "} {r.unit} </h4>
                 </td>
                 <br />
                 <td>
@@ -221,7 +215,13 @@ class SearchResults extends Component {
                     {r.sqft} Square Feet{" "}
                   </h4>
                 </td>
-                {console.log(r.photos[0])}
+                
+               
+              </div>
+              <div class="searchphoto">
+              {console.log("Photo", r.photos[0])}
+                {/* <img src="https://i.imgur.com/lVAv7GN.jpg" /> */}
+                <img class="proppp" src={require("../../images/"+r.photos[0])} />
               </div>
               {/* { <img class="proppp" src={path.join(__dirname, "..", r.photos[0])} /> } */}
             </th>
@@ -254,7 +254,11 @@ class SearchResults extends Component {
             {/* <a href="#" class="tb bluefont inline">
  Trip Boards
  </a> */}
-             <a
+            <a href="/dashboard" class="buttonlyp default bluefont inline">
+              Property History
+            </a>
+
+            <a
               href={
                 sessionStorage.getItem("typeofaccount") == "owner"
                   ? "/lyp"
@@ -330,9 +334,9 @@ class SearchResults extends Component {
               </ul>
             </div>
 
-              <div class="homeawayimg-home inline">
-        <img src="https://i.imgur.com/fLTMlTI.png" />
-        </div> 
+            <div class="homeawayimg-home inline">
+              <img src="https://i.imgur.com/fLTMlTI.png" />
+            </div>
             {/* <a href="/inbox" class="bluefont">
  <span
  class="glyphicon-glyphicon-envelope envelope inline bluefont"
@@ -419,7 +423,7 @@ class SearchResults extends Component {
                 </li>
               </ul>
             </div>
-           
+
             {/* <div class="homeawayimg-pro inline">
  <img src="http://csvcus.homeaway.com/rsrcs/cdn-logos/2.10.6/bce/moniker/homeaway_us/birdhouse-bceheader.svg" />
  </div> */}
@@ -435,67 +439,68 @@ class SearchResults extends Component {
         <br />
         <br />
         <div class="flex-filter">
-        <br />
-        <label class="filterresultslabel_New">Filter Postings: </label>
-        <br />
-        <div class="flex-filter2">
-        <div class="inner-addon left-addon">
-        <i class="glyphicon glyphicon-usd" />{" "}
-        <input
-          type="number"
-          id="myInput"
-          onChange={this.handlePriceFilter}
-          placeholder="Price"
-          class="searchfields mediumsearch"
-          min="0"
-          step="1"
-        />
+          <br />
 
+          <label class="filterresultslabel_New">Filter Postings</label>
+          <br />
+
+          <div class="flex-filter2">
+            <div class="inner-addon left-addon">
+              <i class="glyphicon glyphicon-usd" />{" "}
+              <input
+                type="number"
+                class="searchfields largesearch"
+                onChange={this.handlePriceFilter}
+                placeholder="Price"
+                min="0"
+                step="1"
+              />
+            </div>
+
+            <div class="inner-addon left-addon">
+              <i class="glyphicon glyphicon-home" />{" "}
+              <input
+                type="number"
+                onChange={this.handleRoomFilter}
+                class="searchfields largesearch"
+                placeholder="Rooms"
+                min="0"
+                step="1"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* <label class="filterlabel_New">Rooms: </label> */}
-        <div class="inner-addon left-addon">
-        <i class="glyphicon glyphicon-home" />{" "}
-        <input
-          type="number"
-          id="myInput"
-          onChange={this.handleRoomFilter}
-          class="searchfields mediumsearch"
-          placeholder="Rooms"
-          min="0"
-          step="1"
-        /></div>
-        </div>
-        
-        </div>
-
-        <br />
         <br />
         <div class="tablecss">
-        <table class="table" id="myTable">
-          <thead>
-            <tr>
-              <th > <h3 class="bluefont h2th">
-              <center>{propnew.length} postings</center>
-              <br></br></h3></th>
-            </tr>
-          </thead>
-          <tbody>
-            {/*Display the Table row based on data recieved*/}
-            {details}
-          </tbody>
-        </table>
+          <table class="table" id="myTable">
+            <thead>
+              <tr>
+                <th>
+                  {" "}
+                  <h3 class="bluefont h2th">
+                    <center>{propnew.length} postings</center>
+                    <br />
+                  </h3>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {/*Display the Table row based on data recieved*/}
+              {details}
+            </tbody>
+          </table>
         </div>
         <br />
         <br />
         <br />
         <div>
-        <Pagination
-          itemsCount={propnew.length}
-          pageSize={pageSize}
-          currentPage={currentPage}
-          onPageChange={this.handlePageChange}
-        />
+          <Pagination
+            itemsCount={propnew.length}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={this.handlePageChange}
+          />
         </div>
       </div>
     );

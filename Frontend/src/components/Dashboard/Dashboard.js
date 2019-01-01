@@ -48,6 +48,7 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
+    document.title = "Bloquity";
     if (sessionStorage.getItem("typeofaccount") == "owner")
       this.setState({
         lyp: "/lyp"
@@ -69,11 +70,25 @@ class Dashboard extends Component {
             profileicon: imagePreview
           });
         });
-if(this.props.location.state){
-      this.props.getTransactionHistory({streetaddr: this.props.location.state.streetaddr,
-        unit: this.props.location.state.unit,
-        zip: this.props.location.state.zip});
+      if(this.props.location.state){
+        this.state.streetaddr=this.props.location.state.streetaddr
+        this.state.unit=this.props.location.state.unit
+        this.state.zip=this.props.location.state.zip
+        this.props.getTransactionHistory({streetaddr: this.props.location.state.streetaddr,
+          unit: this.props.location.state.unit,
+          zip: this.props.location.state.zip});
       }
+
+      if(typeof(this.props.match.params.streetaddr)!="undefined") {
+        this.state.streetaddr=this.props.match.params.streetaddr
+        this.state.unit=this.props.match.params.unit
+        this.state.zip=this.props.match.params.zip
+        this.props.getTransactionHistory({streetaddr: this.props.match.params.streetaddr,
+          unit: this.props.match.params.unit,
+          zip: this.props.match.params.zip});
+      }
+
+
     }
     if (localStorage.getItem("token")) {
       axios.defaults.headers.common["Authorization"] = token;
@@ -167,16 +182,27 @@ handleDashSearch=()=>{
 
     const result = paginate(resultnew, currentPage, pageSize);
     if (sessionStorage.getItem("typeofaccount") == "owner") {
-      tablesdata = this.props.result.map(booking => {
-        return (
+      if (this.props.result.hasOwnProperty('error') && this.props.result.error == 404) {
+        tablesdata = (
           <tr>
-            <td>{booking.buyer}</td>
-            <td>{booking.seller}</td>
-            <td>{booking.trans_date}</td>
-            <td>${booking.trans_amt}</td>
-          </tr>
+          <td>Property does not exist</td>
+          <td>NA</td>
+          <td>NA</td>
+          <td>NA</td>
+        </tr>
         );
-      });
+      } else  {
+        tablesdata = this.props.result.map(booking => {
+          return (
+            <tr>
+              <td>{booking.buyer}</td>
+              <td>{booking.seller}</td>
+              <td>{booking.trans_date}</td>
+              <td>${booking.trans_amt}</td>
+            </tr>
+          );
+        });
+      }
     } else if (sessionStorage.getItem("typeofaccount") == "traveler") {
       tablesdata = result.map(booking => {
         return (
@@ -284,16 +310,16 @@ handleDashSearch=()=>{
               href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
               rel="stylesheet"
             />
-            <link
+            {/* <link
               href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css"
               rel="stylesheet"
             />
-            {/* <a href="#" class="flag-icon-background flag-icon-us flag inline">
+            {/* <a href="#" class="flag-icon-background flag-icon-us flag inline"> */}
               {"   "}
-            </a>
-            <a href="#" class="tb bluefont inline">
+            {/* </a> */}
+            {/* <a href="#" class="tb bluefont inline">
               Trip Boards
-            </a> */}
+            </a>  */}
 
              <a
               href={
@@ -390,7 +416,7 @@ handleDashSearch=()=>{
             </a> */}
 
             <div class="btn-group userdd bluefont inline dropdownnav">
-              <div
+              {/* <div
                 class="btn-home inline bluefont-home"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -398,55 +424,55 @@ handleDashSearch=()=>{
               >
                 Help{" "}
                 <span class="glyphicon glyphicon-triangle-bottom smallicon" />
-              </div>
+              </div> */}
               <ul class="dropdown-menu dropdown-menu-right bluefont">
                 <li>
                   {" "}
-                  <a class="dropdown-item " href="#">
+                  {/* <a class="dropdown-item " href="#">
                     <p class="bluefont">
                       {"   "}
                       Visit help center
                     </p>
-                  </a>
+                  </a> */}
                 </li>
                 <li role="separator" class="divider dropdownicons" />
 
-                <li class="dropdown-header travelersfont">
-                  <b>Travelers</b>
-                </li>
+                {/* // <li class="dropdown-header travelersfont">
+                //   <b>Travelers</b>
+                // </li> */}
                 <li>
                   <a class="dropdown-item" href="#">
-                    <p class="bluefont">
+                    {/* <p class="bluefont">
                       {" "}
                       {"   "}
                       How it works
-                    </p>
+                    </p> */}
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    <p class="bluefont">
+                    {/* <p class="bluefont">
                       {"   "}
                       Security Center
-                    </p>
+                    </p> */}
                   </a>
                 </li>
                 <li role="separator" class="divider dropdownicons" />
 
-                <li class="dropdown-header travelersfont">
+                {/* <li class="dropdown-header travelersfont">
                   <b>Home Owners</b>
-                </li>
+                </li> */}
                 <li>
                   <a class="dropdown-item" href="#">
-                    <p class="bluefont">
+                    {/* <p class="bluefont">
                       {" "}
                       {"   "}
                       How it works
-                    </p>
+                    </p> */}
                   </a>
                 </li>
                 <li>
-                  <a
+                  {/* <a
                     class="dropdown-item"
                     href={
                       sessionStorage.getItem("typeofaccount") == "owner"
@@ -459,38 +485,38 @@ handleDashSearch=()=>{
                       {"   "}
                       List your property
                     </p>
-                  </a>
+                  </a> */}
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  {/* <a class="dropdown-item" href="#">
                     <p class="bluefont">
                       {" "}
                       {"   "}
                       Community
                     </p>
-                  </a>
+                  </a> */}
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
+                  {/* <a class="dropdown-item" href="#">
                     <p class="bluefont">
                       {" "}
                       {"   "}
                       Discovery Hub
                     </p>
-                  </a>
+                  </a> */}
                 </li>
                 <li role="separator" class="divider dropdownicons" />
-                <li class="dropdown-header travelersfont">
+                {/* <li class="dropdown-header travelersfont">
                   <b>Property managers</b>
-                </li>
+                </li> */}
                 <li>
-                  <a class="dropdown-item" href="#">
+                  {/* <a class="dropdown-item" href="#">
                     <p class="bluefont">
                       {" "}
                       {"   "}
                       List your properties
                     </p>
-                  </a>
+                  </a> */}
                 </li>
               </ul>
             </div>
@@ -511,7 +537,17 @@ handleDashSearch=()=>{
         <br />
         <br />
         <div>
+
+        <div class="flex-filter">
+        <br />
+        
+        <label class="filterresultslabel_New2">Enter Full Address</label>
+        <br />
+        
+
         <div class="flex-container_New3">
+
+                
                 <div class="inner-addon left-addon">
                   <i class="glyphicon  gapsfi glyphicon-map-marker" />
                   <input
@@ -544,6 +580,7 @@ handleDashSearch=()=>{
                 </div>
                 <button class="homesearchbuttondash" onClick={this.handleDashSearch}>
                 Search</button>
+                </div>
                 </div>
           </div>
         <div>{details}</div>

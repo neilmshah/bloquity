@@ -424,10 +424,14 @@ class ListYourProperty extends Component {
 
     this.props.lyp(data, response => {
       // this.submitPhoto();
-      console.log("LYPPPPP", response._id);
-      this.submitPhoto(response._id);
-      alert("Property Added!");
-      this.props.history.push("/home");
+      if (response.hasOwnProperty('error')) {
+        alert(response.error);
+      } else {
+        console.log("LYPPPPP", response._id);
+        this.submitPhoto(response._id);
+        alert("Property Added!");
+        this.props.history.push("/home");
+      }
     });
   };
 
@@ -498,9 +502,18 @@ class ListYourProperty extends Component {
             <button class="buttonlyp default bluefont inline">About Us</button>
 
             <button class="buttonlyp default bluefont inline">Contact</button>
-            <button class="buttonlyp default bluefont inline">
-              Post Your Property
-            </button>
+            <a
+              href={
+                sessionStorage.getItem("typeofaccount") == "owner"
+                  ? "/lyp"
+                  : "#"
+              }
+              href="#photos"
+              class="buttonlyp default bluefont inline"
+            >
+              Post your property
+            </a>
+
             <div class="btn-group inline dropdownnav">
               <div
                 class="btn-home inline bluefont-home"
@@ -573,6 +586,9 @@ class ListYourProperty extends Component {
             <div>
               {" "}
               {/*Navs*/}
+              <div class="tablecss4">
+                <b>POST YOUR PROPERTY BY FILLING OUT ALL THREE FIELDS BELOW</b>
+              </div>
               <ul class="nav">
                 {/* ADDING PROPERTY REQS */}
                 <br />
@@ -972,7 +988,7 @@ class ListYourProperty extends Component {
                   </div>
                 </div>
                 {/*---------------------------------PHOTOS--------------------------------*/}
-                <div class="tab-pane" id="photos">
+                <div class="tab-pane active" id="photos">
                   <h1> Add up to 5 photos of your property </h1>
                   <hr />
                   Showcase your property’s best features (no pets or people,

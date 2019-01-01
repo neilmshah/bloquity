@@ -107,80 +107,82 @@ class Property extends Component {
 
   componentDidMount() {
     document.title = "Bloquity";
-    axios.defaults.headers.common["Authorization"] = token;
-    axios
-      .get(`${ROOT_URL}/photos/profile`, {
-        params: {
-          email: sessionStorage.getItem("email")
-        }
-      })
-      .then(response => {
-        //update the state with the response data
-        console.log("Image Res : ", response);
-        let imagePreview = "data:image/jpg;base64, " + response.data;
-        this.setState({
-          profileicon: imagePreview
+    if(1) {
+     // axios.defaults.headers.common["Authorization"] = token;
+      axios
+        .get(`${ROOT_URL}/photos/profile`, {
+          params: {
+            email: sessionStorage.getItem("email")
+          }
+        })
+        .then(response => {
+          //update the state with the response data
+          console.log("Image Res : ", response);
+          let imagePreview = "data:image/jpg;base64, " + response.data;
+          this.setState({
+            profileicon: imagePreview
+          });
+          // console.log("PROFILEICON", this.state.profileicon);
         });
-        // console.log("PROFILEICON", this.state.profileicon);
-      });
 
-    axios.defaults.headers.common["Authorization"] = token;
-    axios
-      .get(`${ROOT_URL}/photos/property`, {
-        params: {
-          owner_email: this.state.prop_owner_email,
-          propnum_pk: this.state.propnum_pk
-        }
-      })
-      .then(response => {
-        //update the state with the response data
-        //console.log("Image Res : ", response.data[0]);
-        response.data.forEach(element => {
-          //  console.log("ElEM", element);
-          let imagePreview = "data:image/jpg;base64, " + element;
-          this.setState(
-            {
-              photos: this.state.photos.concat(imagePreview)
-            },
-            //callback()
-            () => {
-              if (this.state.photos.length == 2) {
-                this.setState({
-                  pic3: this.state.photos[0],
-                  pic1: this.state.photos[0],
-                  pic5: this.state.photos[0],
-                  pic2: this.state.photos[1],
-                  pic4: this.state.photos[1]
-                });
-              } else if (this.state.photos.length == 3) {
-                this.setState({
-                  pic1: this.state.photos[0],
-                  pic4: this.state.photos[0],
-                  pic2: this.state.photos[1],
-                  pic5: this.state.photos[1],
-                  pic3: this.state.photos[2]
-                });
-              } else if (this.state.photos.length == 4) {
-                this.setState({
-                  pic1: this.state.photos[0],
-                  pic5: this.state.photos[0],
-                  pic2: this.state.photos[1],
-                  pic3: this.state.photos[2],
-                  pic4: this.state.photos[3]
-                });
-              } else if (this.state.photos.length == 5) {
-                this.setState({
-                  pic1: this.state.photos[0],
-                  pic2: this.state.photos[1],
-                  pic3: this.state.photos[2],
-                  pic4: this.state.photos[3],
-                  pic5: this.state.photos[4]
-                });
+   //   axios.defaults.headers.common["Authorization"] = token;
+      axios
+        .get(`${ROOT_URL}/photos/property`, {
+          params: {
+            owner_email: this.state.prop_owner_email,
+            propnum_pk: this.state.propnum_pk
+          }
+        })
+        .then(response => {
+          //update the state with the response data
+          //console.log("Image Res : ", response.data[0]);
+          response.data.forEach(element => {
+            //  console.log("ElEM", element);
+            let imagePreview = "data:image/jpg;base64, " + element;
+            this.setState(
+              {
+                photos: this.state.photos.concat(imagePreview)
+              },
+              //callback()
+              () => {
+                if (this.state.photos.length == 2) {
+                  this.setState({
+                    pic3: this.state.photos[0],
+                    pic1: this.state.photos[0],
+                    pic5: this.state.photos[0],
+                    pic2: this.state.photos[1],
+                    pic4: this.state.photos[1]
+                  });
+                } else if (this.state.photos.length == 3) {
+                  this.setState({
+                    pic1: this.state.photos[0],
+                    pic4: this.state.photos[0],
+                    pic2: this.state.photos[1],
+                    pic5: this.state.photos[1],
+                    pic3: this.state.photos[2]
+                  });
+                } else if (this.state.photos.length == 4) {
+                  this.setState({
+                    pic1: this.state.photos[0],
+                    pic5: this.state.photos[0],
+                    pic2: this.state.photos[1],
+                    pic3: this.state.photos[2],
+                    pic4: this.state.photos[3]
+                  });
+                } else if (this.state.photos.length == 5) {
+                  this.setState({
+                    pic1: this.state.photos[0],
+                    pic2: this.state.photos[1],
+                    pic3: this.state.photos[2],
+                    pic4: this.state.photos[3],
+                    pic5: this.state.photos[4]
+                  });
+                }
               }
-            }
-          );
+            );
+          });
         });
-      });
+      }
   }
 
   handleLogout = () => {
@@ -205,25 +207,38 @@ class Property extends Component {
   };
 
   buyProperty = e => {
-    var headers = new Headers();
-    //prevent page from refresh
-    e.preventDefault();
-    // var email = sessionStorage.getItem('email');
-    const data = {
-      trans_amt: "100,000",
-      fname: this.state.fname,
-      lname: this.state.lname,
-      owner_fname: this.state.owner_fname,
-      owner_lname: this.state.owner_lname,
-      streetaddr: this.state.streetaddr,
-      unit: this.state.unit,
-      zip: this.state.zip,
-      property_id: this.state.propnum_pk
-    };
-    this.props.buyProperty(data, () => {
-      alert("Congratualations. Property Brought! Check Property history.");
-      this.props.history.push("/dashboard");
-    });
+    if(token) {
+      var headers = new Headers();
+      //prevent page from refresh
+      e.preventDefault();
+      // var email = sessionStorage.getItem('email');
+      const data = {
+        trans_amt: this.state.price,
+        fname: this.state.fname,
+        lname: this.state.lname,
+        owner_fname: this.state.owner_fname,
+        owner_lname: this.state.owner_lname,
+        streetaddr: this.state.streetaddr,
+        unit: this.state.unit,
+        zip: this.state.zip,
+        property_id: this.state.propnum_pk
+      };
+      
+      if(data.fname!=data.owner_fname || data.lname!=data.owner_lname) {
+        this.props.buyProperty(data, () => {
+          alert("Congratulations. Property Brought! Check Property history");
+          var address=String(this.state.streetaddr).replace(/\s+/g, "")
+          this.props.history.push({
+            pathname: `/dashboard?=${address}/${this.state.unit}/${this.state.zip}`,
+            // state: { streetaddr: this.state.streetaddr,unit:this.state.unit,zip:this.state.zip }
+          });
+        });
+      } else {
+        alert("You already own the property")
+      }
+    } else {
+      alert("Please log in to buy the property.")
+    }
   };
 
   sendMessage = () => {
@@ -256,8 +271,104 @@ class Property extends Component {
     let redirectVar = null;
     let navLogin = null;
     let photos = null;
+if(this.state.fname&&this.state.lname)
+var details=  (            <div class="btn-group inline dropdownnav">
+<div
+  class="btn-home inline bluefont-home"
+  data-toggle="dropdown"
+  aria-haspopup="true"
+  aria-expanded="false"
+>
+  <img src={this.state.profileicon} class="smallimg" />
+  {"   "}
+{this.state.fname.concat(" " + this.state.lname)}
+  <span class="glyphicon glyphicon-triangle-bottom smallicon" />
+</div>
+<ul class="dropdown-menu dropdown-menu-right bluefont">
+  {/* <li>
+    {" "}
+    <a class="dropdown-item bluefont" href="/inbox">
+      <p class="bluefont">
+        <span class=" glyphicon glyphicon-envelope dropdownicons bluefont" />
+        {"   "}
+        Inbox
+      </p>
+    </a>
+  </li> */}
+  <br />
+  <li>
+    <a class="dropdown-item" href="/dashboard">
+      <p class="bluefont">
+        <span class="glyphicon glyphicon-briefcase dropdownicons" />{" "}
+        {"   "}
+        Dashboard
+      </p>
+    </a>
+  </li>
+  <br />
+  <li>
+    <a class="dropdown-item" href="/profile">
+      <p class="bluefont">
+        <span class="glyphicon glyphicon-user dropdownicons" />
+        {"   "}
+        My Profile
+      </p>
+    </a>
+  </li>
+  <br />
+  <li>
+    <a class="dropdown-item" href="#">
+      <p class="bluefont">
+        <span class="glyphicon glyphicon-cog dropdownicons" />
+        {"   "} Account
+      </p>
+    </a>
+  </li>
 
-    if (token) {
+  <li role="separator" class="divider dropdownicons" />
+
+  <li>
+    <a
+      class="dropdown-item"
+      href="/home"
+      onClick={this.handleLogout}
+    >
+      <p class="bluefont">
+        <span class="glyphicon glyphicon-log-out dropdownicons" />{" "}
+        {"   "}
+        Logout
+      </p>
+    </a>
+  </li>
+</ul>
+</div>)
+else 
+var details=( <div class="btn-group inline dropdownnav">
+<div
+  class=" btn-home inline bluefont-home"
+  data-toggle="dropdown"
+  aria-haspopup="true"
+  aria-expanded="false"
+>
+  {" "}
+  Login{" "}
+  <span class="glyphicon glyphicon-triangle-bottom smallicon" />
+</div>
+<ul class="dropdown-menu dropdown-menu-right bluefont">
+  <li>
+    {" "}
+    <a class="dropdown-item " href="/login">
+      <p class="bluefont">Login</p>
+    </a>
+  </li>
+  <li>
+    <a class="dropdown-item" href="/SignUp">
+      <p class="bluefont">Sign Up</p>
+    </a>
+  </li>
+</ul>
+</div>);
+    if (1) {
       navLogin = (
         <div>
           <div class="header-bce-home_New bluefont-home">
@@ -291,79 +402,20 @@ class Property extends Component {
             </a>
             <button class="buttonlyp default bluefont inline">About Us</button>
             <button class="buttonlyp default bluefont inline">Contact</button>
-            <button class="buttonlyp default bluefont inline">
-              Post Your Property
-            </button>
-            <div class="btn-group inline dropdownnav">
-              <div
-                class="btn-home inline bluefont-home"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <img src={this.state.profileicon} class="smallimg" />
-                {"   "}
-                {this.state.fname.concat(" " + this.state.lname)}{" "}
-                <span class="glyphicon glyphicon-triangle-bottom smallicon" />
-              </div>
-              <ul class="dropdown-menu dropdown-menu-right bluefont">
-                {/* <li>
-                  {" "}
-                  <a class="dropdown-item bluefont" href="/inbox">
-                    <p class="bluefont">
-                      <span class=" glyphicon glyphicon-envelope dropdownicons bluefont" />
-                      {"   "}
-                      Inbox
-                    </p>
-                  </a>
-                </li> */}
-                <br />
-                <li>
-                  <a class="dropdown-item" href="/dashboard">
-                    <p class="bluefont">
-                      <span class="glyphicon glyphicon-briefcase dropdownicons" />{" "}
-                      {"   "}
-                      Dashboard
-                    </p>
-                  </a>
-                </li>
-                <br />
-                <li>
-                  <a class="dropdown-item" href="/profile">
-                    <p class="bluefont">
-                      <span class="glyphicon glyphicon-user dropdownicons" />
-                      {"   "}
-                      My Profile
-                    </p>
-                  </a>
-                </li>
-                <br />
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="bluefont">
-                      <span class="glyphicon glyphicon-cog dropdownicons" />
-                      {"   "} Account
-                    </p>
-                  </a>
-                </li>
+            <a
+              href={
+                sessionStorage.getItem("typeofaccount") == "owner"
+                  ? "/lyp"
+                  : "#"
+              }
+              class="buttonlyp default bluefont inline"
+            >
+              Post your property
+            </a>
+            {
+      details
+        }{" "}
 
-                <li role="separator" class="divider dropdownicons" />
-
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="/home"
-                    onClick={this.handleLogout}
-                  >
-                    <p class="bluefont">
-                      <span class="glyphicon glyphicon-log-out dropdownicons" />{" "}
-                      {"   "}
-                      Logout
-                    </p>
-                  </a>
-                </li>
-              </ul>
-            </div>
             {/* <a
               href={
                 sessionStorage.getItem("typeofaccount") == "owner"
@@ -378,7 +430,6 @@ class Property extends Component {
               <img src="https://i.imgur.com/fLTMlTI.png" />
             </div>
           </div>
-
           {/*-----------------------------------------PHOTO -------------------------------------*/}
           <div
             id="myCarousel"
@@ -434,34 +485,25 @@ class Property extends Component {
               <span class="sr-only">Next</span>
             </a>
           </div>
-
           {/*-----------------------------------------PHOTO -------------------------------------*/}
-
           <br />
           <div class="tablecss2">
             <p class="grayie_Description">
-              <b> Description of Property:</b> {this.state.propdesc}{" "}
+              <b> Property Description:</b> {this.state.propdesc}{" "}
             </p>
           </div>
-
           <div class="tablecss3">
             <div class="coninfo">
               {/* <div class="propinfo_New descNew">
                 <h2>{this.state.headline}</h2>
               </div> */}
               {/* <p class="grayie_Details">
-              Details </p> */}
-              <thead>
-                <tr>
-                  <th>
-                    {" "}
-                    <h3 class="bluefont h2th3">
-                      <center> {"     "} Details</center>
-                      <br />
-                    </h3>
-                  </th>
-                </tr>
-              </thead>
+              Details </p> */}{" "}
+              <h3 class="bluefont2 h2th3">
+                <center> {"     "} Details</center>
+                <p class="vl" />
+                <br />
+              </h3>
               <div class="iconsprop">
                 <p class="grayie">
                   <b>Property Manager: </b> {this.state.owner_fname}{" "}
@@ -471,6 +513,7 @@ class Property extends Component {
                 <p class="grayie">
                   <b>Address of Property:</b> {"  "}
                   {this.state.streetaddr} {", "}{" "}
+                  {this.state.unit} {", "} {" "}
                   {this.state.city.charAt(0).toUpperCase() +
                     this.state.city.slice(1)}{" "}
                   {", "} {this.state.state.toUpperCase()} {", "}{" "}
@@ -486,7 +529,7 @@ class Property extends Component {
                 <p class="grayie">
                   {" "}
                   <b>Property Size: </b>
-                  {this.state.sqft} {"sqft"}
+                  {this.state.sqft} {"Square Feet"}
                 </p>
 
                 <p class="grayie">
@@ -515,42 +558,30 @@ class Property extends Component {
                   </span>
                 </i>
               </div>
+              <br />
+              <br />
+              <br />
+              <div>
+                <button id="linktranhist2" onClick={this.buyProperty}>
+                  Buy Property
+                </button>
 
-              <br />
-              <br />
-
-              <button class="homesearchbutton book" onClick={this.buyProperty}>
-                Buy Property
-              </button>
-              <br />
-              <br />
-              {/* <Link to={{
-      pathname: '/template',
-      search: '?query=abc',
-      state: { detail: response.data }
-    }}> My Link </Link> */}
-
-              <Link
-                class="homesearchbutton book"
-                id="linktranhist"
-                to={{
-                  pathname: "/dashboard",
-                  state: {
-                    streetaddr: this.state.streetaddr,
-                    unit: this.state.unit,
-                    zip: this.state.zip
-                  }
-                }}
-              >
-                View Transaction History
-              </Link>
-
-              <br />
-
-              <br />
-              <br />
+                <Link
+                  id="linktranhist"
+                  to={{
+                    pathname: "/dashboard",
+                    state: {
+                      streetaddr: this.state.streetaddr,
+                      unit: this.state.unit,
+                      zip: this.state.zip
+                    }
+                  }}
+                >
+                  View Transaction History
+                </Link>
+              </div>
             </div>
-          </div>
+          </div>{" "}
         </div>
       );
     } else redirectVar = <Redirect to="/login" />;
