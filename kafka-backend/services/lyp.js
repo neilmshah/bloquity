@@ -36,27 +36,28 @@ function handle_request(msg, callback) {
   });
 
   console.log("************************HYPERLEDGER*****************************")
-  console.log("Making request to HYPERLEDGER to chk if asset exists")
+  console.log("Making request to HYPERLEDGER to chk if property asset exists")
   uniqueID = msg.streetaddr + msg.unit + msg.zip
   propID = String(uniqueID).replace(/\s+/g, "")
+  propID = propID.toLowerCase()
   url="http://107.23.194.9:4000/api/org.digitalproperty.Property/" + propID
 
   request(url, { json: true }, (err, res, body) => {
     if (err) { 
       console.log(
-        "There was a problem in getting the transaction history from hyperledger."
+        "There was a problem in getting the property details from hyperledger."
       );
       console.log(err); 
       callback(null, []);
     }
-     
-    if(res.statusCode==404){
+    // Property does not exist
+    if(res.statusCode == 404) {
       console.log("Property Asset " + propID + " does not exist in Hyperledger.");
 
       console.log("Creating new asset for property " + propID); 
 
       //create new asset on hyperledger
-      bodyData={
+      data={
         "propertyId": propID,
         "transactionHistory": []
       }
@@ -66,7 +67,7 @@ function handle_request(msg, callback) {
       request.post({
             headers: {'content-type' : 'application/json'},
             url: url,
-            body: bodyData,
+            body: data,
             json: true
             }, function(error, response, body){
                 if(error){ 
@@ -75,16 +76,23 @@ function handle_request(msg, callback) {
                   );
                   console.log(error); 
                   callback(null, []);
+                } 
+
+                if (response.statusCode != 200) {
+                  console.log(
+                    "There was a problem in creating new asset in hyperledger in lyp.js"
+                  );
+                  callback(null, []);
                 }
                 console.log("Property asset created.")
                 console.log("********************************************************")
                 console.log("Posting transaction for property ",propID)
                 transaction= {
-                  "buyer":msg.fname + " " + msg.lname,
+                  "buyer": msg.fname + " " + msg.lname,
                   "seller":"builder",
-                  "trans_date":"01/01/"+msg.yearbuilt,
-                  "trans_amt":"undisclosed",
-                  "property":propID
+                  "trans_date": msg.yearbuilt + "-01-01",
+                  "trans_amt":"Undisclosed",
+                  "property": propID
                 }
                 console.log("Transaction: " + JSON.stringify(transaction))
                 url="http://107.23.194.9:4000/api/org.digitalproperty.TransactionDetails"
@@ -101,8 +109,14 @@ function handle_request(msg, callback) {
                           );
                           console.log(error); 
                           callback(null, []);
+                        }  
+                        if (response.statusCode != 200) {
+                          console.log(
+                            "There was a problem in saving the transaction history to hyperledger in lyp.js"
+                          );
+                          callback(null, []);
                         }
-                        //console.log(body);
+                        // console.log(body);
                         console.log("Posting transaction completed.")
                         console.log("****************************************")
                         property.save().then(
@@ -120,17 +134,16 @@ function handle_request(msg, callback) {
       });
 
       
-    } else {
+    } else if (res.statusCode == 200) {
       console.log("Property Exists, Checking if owners match")
 
-      var currentOwnerIndex=(res.body.transactionHistory).length -1
+      var currentOwnerIndex=(res.body.transactionHistory).length - 1
       var currentOwner = res.body.transactionHistory[currentOwnerIndex].buyer
       //console.log("Buyer=", res.body.transactionHistory[currentOwnerIndex].buyer)
       var postOwner=msg.fname + " " + msg.lname
       if(currentOwner.toLowerCase()!=postOwner.toLowerCase()){
         console.log("Owners dont match")
-        callback(null, JSON.stringify({"error":"Property Owners do not match. Cannot post property."}));
-
+        callback(null, JSON.stringify({error:"You cannot post a property you do not own!"}));
       } else {
         console.log("Owners match!")
         console.log("************************HYPERLEDGER*****************************")
@@ -147,6 +160,11 @@ function handle_request(msg, callback) {
         );
       }
 
+    } else {
+      console.log(
+        "There was a problem in getting the property details from hyperledger."
+      );
+      callback(null, []);
     }
   });
 
