@@ -19,6 +19,11 @@ Title records are decentralized, challenging-to-access aspect of the real estate
 
 ****************************************************************************************************************
 
+## Screenshots of usage
+##### 1. Homepage
+![homepage](bloquityScreenshots/Homepage.png)
+
+
 ### Usage (currently runs locally and is tedius, will be moved to AWS/Bluemix and dockerized eventually)
 
 #### Dependencies
